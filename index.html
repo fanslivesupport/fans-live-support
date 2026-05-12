@@ -132,188 +132,255 @@ h1{font-size:58px;line-height:1.06;letter-spacing:-.055em;margin:0;font-weight:9
 }
 @media(max-width:420px){.navlinks a{font-size:13px;padding:10px 8px}}
 
-/* V5.0 minimal premium dashboard only */
+/* V5.1 Dashboard Spotlight Carousel */
 .supportgrid{
   display:block;
   margin-top:30px;
 }
-.minimal-console{
-  display:grid;
-  grid-template-columns:1.08fr .92fr;
-  gap:18px;
-  align-items:stretch;
-}
-.console-visual{
+.spotlight{
   position:relative;
-  min-height:280px;
-  border-radius:34px;
-  padding:24px;
   overflow:hidden;
+  border-radius:34px;
   background:
-    radial-gradient(circle at 82% 20%,rgba(196,181,253,.65) 0 13px,transparent 14px),
-    radial-gradient(circle at 90% 56%,rgba(147,197,253,.70) 0 15px,transparent 16px),
-    radial-gradient(circle at 68% 70%,rgba(167,139,250,.72) 0 16px,transparent 17px),
-    linear-gradient(135deg,#eef2ff,#fbfdff);
+    radial-gradient(circle at 12% 0%,rgba(109,40,217,.10),transparent 34%),
+    radial-gradient(circle at 100% 18%,rgba(37,99,235,.09),transparent 36%),
+    linear-gradient(180deg,#ffffff 0%,#fbfdff 100%);
   border:1px solid rgba(226,232,240,.95);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 18px 45px rgba(90,90,150,.08);
+  box-shadow:0 22px 58px rgba(90,90,150,.10);
 }
-.console-visual:before{
+.spotlight-track{
+  display:flex;
+  width:100%;
+  transition:transform .65s cubic-bezier(.22,.72,.22,1);
+}
+.spotlight-slide{
+  min-width:100%;
+  padding:24px;
+}
+.spotlight-card{
+  min-height:350px;
+  border-radius:30px;
+  padding:24px;
+  display:grid;
+  grid-template-columns:1fr .82fr;
+  gap:22px;
+  align-items:stretch;
+  background:
+    radial-gradient(circle at 78% 24%,rgba(196,181,253,.62) 0 13px,transparent 14px),
+    radial-gradient(circle at 92% 63%,rgba(147,197,253,.72) 0 15px,transparent 16px),
+    radial-gradient(circle at 60% 76%,rgba(167,139,250,.72) 0 16px,transparent 17px),
+    linear-gradient(135deg,#eef2ff,#f9fbff);
+  border:1px solid rgba(255,255,255,.92);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.90);
+  position:relative;
+  overflow:hidden;
+}
+.spotlight-card:after{
   content:"";
   position:absolute;
   left:24px;
   right:24px;
-  bottom:28px;
-  height:12px;
+  bottom:24px;
+  height:10px;
   border-radius:999px;
-  background:linear-gradient(90deg,rgba(91,77,255,.18),rgba(37,99,235,.08));
+  background:linear-gradient(90deg,rgba(91,77,255,.16),rgba(37,99,235,.07));
 }
-.console-live{
+.spotlight-main{
+  position:relative;
+  z-index:2;
+  align-self:center;
+}
+.slide-label{
   display:inline-flex;
   align-items:center;
-  gap:9px;
+  gap:8px;
+  padding:10px 13px;
+  border-radius:999px;
+  background:rgba(255,255,255,.82);
+  border:1px solid rgba(226,232,240,.82);
+  color:#5b4dff;
+  font-size:12px;
+  font-weight:950;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  box-shadow:0 10px 24px rgba(90,90,150,.07);
+}
+.slide-label:before{
+  content:"";
+  width:8px;
+  height:8px;
+  border-radius:999px;
+  background:#5b4dff;
+}
+.spotlight-main h3{
+  font-size:30px;
+  line-height:1.06;
+  letter-spacing:-.04em;
+  margin:20px 0 12px;
+}
+.spotlight-main p{
+  margin:0;
+  max-width:330px;
+  color:#64748b;
+  font-weight:750;
+  line-height:1.62;
+  font-size:15px;
+}
+.big-stat{
+  margin-top:22px;
+  display:inline-flex;
+  flex-direction:column;
+  gap:5px;
+  padding:17px 20px;
+  border-radius:24px;
+  background:rgba(255,255,255,.78);
+  border:1px solid rgba(255,255,255,.9);
+  box-shadow:0 16px 36px rgba(90,90,150,.08);
+}
+.big-stat b{
+  color:#5b4dff;
+  font-size:27px;
+  line-height:1.1;
+}
+.big-stat span{
+  color:#64748b;
+  font-weight:900;
+  font-size:12px;
+}
+.spotlight-visual{
+  position:relative;
+  z-index:2;
+  border-radius:28px;
+  background:rgba(255,255,255,.60);
+  border:1px solid rgba(255,255,255,.90);
+  box-shadow:0 18px 44px rgba(90,90,150,.08);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:260px;
+  overflow:hidden;
+}
+.spotlight-visual:before{
+  content:"";
+  position:absolute;
+  inset:24px;
+  border-radius:26px;
+  background:
+    radial-gradient(circle at 72% 28%,rgba(196,181,253,.88) 0 13px,transparent 14px),
+    radial-gradient(circle at 82% 64%,rgba(147,197,253,.88) 0 15px,transparent 16px),
+    linear-gradient(135deg,#f8fbff,#eef2ff);
+}
+.visual-pill{
+  position:relative;
+  z-index:2;
   border-radius:22px;
+  padding:16px 23px;
   background:linear-gradient(135deg,#6d28d9,#2563eb);
   color:white;
   font-weight:950;
-  padding:16px 22px;
-  box-shadow:0 18px 34px rgba(91,77,255,.23);
+  box-shadow:0 18px 34px rgba(91,77,255,.24);
 }
-.console-live:before{
-  content:"";
-  width:8px;
-  height:8px;
-  border-radius:99px;
-  background:#fff;
-  box-shadow:0 0 0 6px rgba(255,255,255,.18);
-}
-.console-title{
+.visual-lines{
   position:absolute;
-  left:24px;
-  bottom:58px;
-}
-.console-title b{
-  display:block;
-  font-size:28px;
-  line-height:1.05;
-  letter-spacing:-.04em;
-}
-.console-title span{
-  display:block;
-  margin-top:8px;
-  color:#64748b;
-  font-weight:850;
-  font-size:14px;
-}
-.console-chip{
-  position:absolute;
-  right:22px;
+  z-index:2;
+  left:44px;
+  right:44px;
   bottom:52px;
-  background:#ecfdf5;
-  color:#15803d;
-  border:1px solid rgba(22,163,74,.10);
-  border-radius:999px;
-  padding:10px 13px;
-  font-size:13px;
-  font-weight:950;
-}
-.console-stats{
   display:grid;
-  gap:12px;
+  gap:9px;
 }
-.console-stat{
-  min-height:82px;
-  border-radius:24px;
-  padding:17px 18px;
-  background:
-    radial-gradient(circle at 100% 0%,rgba(109,40,217,.07),transparent 42%),
-    linear-gradient(135deg,#f8fbff,#f5f7ff);
-  border:1px solid rgba(255,255,255,.95);
-  box-shadow:0 14px 34px rgba(90,90,150,.07);
+.visual-lines i{
+  display:block;
+  height:9px;
+  border-radius:999px;
+  background:linear-gradient(90deg,rgba(91,77,255,.18),rgba(37,99,235,.08));
 }
-.console-stat span{
+.visual-lines i:nth-child(2){width:76%}
+.visual-lines i:nth-child(3){width:58%}
+.spotlight-cta{
+  position:relative;
+  z-index:3;
+  margin-top:22px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:18px;
+  padding:13px 18px;
+  background:#25d366;
+  color:white;
+  font-weight:950;
+  text-decoration:none;
+  box-shadow:0 14px 28px rgba(37,211,102,.20);
+}
+.spotlight-controls{
+  position:relative;
   display:flex;
   align-items:center;
   gap:8px;
-  color:#64748b;
-  font-weight:950;
-  font-size:14px;
+  padding:0 24px 22px;
+  overflow-x:auto;
 }
-.console-stat span:before{
-  content:"";
-  width:8px;
-  height:8px;
-  border-radius:99px;
-  background:#5b4dff;
-}
-.console-stat strong{
-  display:block;
-  margin-top:10px;
-  font-size:21px;
-  line-height:1.18;
-  color:#5b4dff;
-}
-.console-note{
-  margin-top:16px;
-  border-radius:26px;
-  padding:17px 20px;
-  background:rgba(255,255,255,.80);
+.spotlight-tab{
+  appearance:none;
   border:1px solid #e2e8f0;
+  background:#f8fafc;
   color:#64748b;
-  font-weight:850;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:14px;
-}
-.console-note b{
-  color:#111827;
-}
-.console-note small{
-  color:#15803d;
   font-weight:950;
+  border-radius:999px;
+  padding:10px 13px;
+  cursor:pointer;
+  white-space:nowrap;
+}
+.spotlight-tab.active{
+  color:#111827;
+  background:#ffffff;
+  box-shadow:0 10px 24px rgba(90,90,150,.08);
+}
+.spotlight-arrows{
+  position:absolute;
+  right:24px;
+  bottom:22px;
+  display:flex;
+  gap:8px;
+}
+.spotlight-arrow{
+  width:38px;
+  height:38px;
+  border:1px solid #e2e8f0;
+  background:#ffffff;
+  border-radius:999px;
+  color:#111827;
+  font-weight:950;
+  cursor:pointer;
+  box-shadow:0 10px 24px rgba(90,90,150,.08);
 }
 @media(max-width:980px){
-  .minimal-console{
+  .supportgrid{margin-top:22px}
+  .spotlight{border-radius:30px}
+  .spotlight-slide{padding:18px}
+  .spotlight-card{
+    min-height:430px;
     grid-template-columns:1fr;
-  }
-  .console-visual{
-    min-height:220px;
-    border-radius:28px;
+    gap:18px;
+    border-radius:26px;
     padding:20px;
   }
-  .console-title{
-    left:20px;
-    bottom:50px;
-  }
-  .console-title b{
-    font-size:25px;
-  }
-  .console-chip{
-    right:18px;
-    bottom:46px;
-  }
-  .console-stats{
-    grid-template-columns:1fr;
-  }
-  .console-stat{
-    min-height:76px;
-    border-radius:22px;
-    padding:15px 16px;
-  }
-  .console-note{
-    display:block;
-    padding:16px;
-  }
-  .console-note small{
-    display:block;
-    margin-top:6px;
-  }
+  .spotlight-main{align-self:start}
+  .spotlight-main h3{font-size:28px}
+  .spotlight-main p{font-size:15px}
+  .big-stat b{font-size:25px}
+  .spotlight-visual{min-height:170px}
+  .spotlight-visual:before{inset:18px}
+  .visual-lines{left:34px;right:34px;bottom:36px}
+  .spotlight-controls{padding:0 18px 18px}
+  .spotlight-tab{font-size:13px;padding:9px 11px}
+  .spotlight-arrows{display:none}
 }
 
 </style>
 </head>
 <body>
-<!-- v5.0-dashboard-minimal -->
+<!-- v5.1-dashboard-spotlight-carousel -->
 <div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 <div class="wrap">
 <header class="nav">
@@ -341,19 +408,80 @@ h1{font-size:58px;line-height:1.06;letter-spacing:-.055em;margin:0;font-weight:9
   <div class="panel"><div class="inner">
     <div class="systemtop"><div><div class="kicker">Live Room Support System</div><h2>Fans Live Support</h2><p>观看氛围 · 评论节奏 · 配套报价</p></div><div class="status">WhatsApp Ready</div></div>
     <div class="supportgrid">
-      <div class="minimal-console">
-        <div class="console-visual">
-          <div class="console-live">LIVE</div>
-          <div class="console-title"><b>Facebook Live Room</b><span>现场感 · 观看氛围</span></div>
-          <div class="console-chip">WhatsApp Ready</div>
+      <div class="spotlight" data-carousel>
+        <div class="spotlight-track">
+        <article class="spotlight-slide" aria-label="直播人数小时">
+          <div class="spotlight-card">
+            <div class="spotlight-main">
+              <div class="slide-label">Viewer Support</div>
+              <h3>直播人数小时</h3>
+              <p>适合短场直播、活动直播与临时安排，让直播间快速有基础现场感。</p>
+              <div class="big-stat"><b>50 / 100 / Custom</b><span>按人数与时长安排</span></div>
+              <a class="spotlight-cta" href="https://wa.me/60137114191?text=%E4%BD%A0%E5%A5%BD%20Fans%EF%BC%8C%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%20Facebook%20Live%20%E7%9B%B4%E6%92%AD%E4%BA%BA%E6%95%B0%E6%9C%8D%E5%8A%A1%E3%80%82%0A%0A%E7%9B%B4%E6%92%AD%E6%97%A5%E6%9C%9F%EF%BC%9A%0A%E7%9B%B4%E6%92%AD%E6%97%B6%E9%97%B4%EF%BC%9A%0A%E9%9C%80%E8%A6%81%E4%BA%BA%E6%95%B0%EF%BC%9A%0A%E9%9C%80%E8%A6%81%E6%97%B6%E9%95%BF%EF%BC%9A%0A%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E5%8C%85%E6%9C%88%EF%BC%9A%0A%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E8%AF%84%E8%AE%BA%E6%B0%94%E6%B0%9B%E6%94%AF%E6%8C%81%EF%BC%9A" target="_blank" rel="noopener">Quote via WhatsApp</a>
+            </div>
+            <div class="spotlight-visual" aria-hidden="true">
+              <div class="visual-pill">LIVE</div>
+              <div class="visual-lines"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+        </article>
+        <article class="spotlight-slide" aria-label="直播人数包月">
+          <div class="spotlight-card">
+            <div class="spotlight-main">
+              <div class="slide-label">Monthly Plan</div>
+              <h3>直播人数包月</h3>
+              <p>适合经常直播和长期运营客户，让直播氛围更稳定、更持续。</p>
+              <div class="big-stat"><b>Monthly / Flexible</b><span>长期直播支持</span></div>
+              <a class="spotlight-cta" href="https://wa.me/60137114191?text=%E4%BD%A0%E5%A5%BD%20Fans%EF%BC%8C%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%20Facebook%20Live%20%E7%9B%B4%E6%92%AD%E4%BA%BA%E6%95%B0%E6%9C%8D%E5%8A%A1%E3%80%82%0A%0A%E7%9B%B4%E6%92%AD%E6%97%A5%E6%9C%9F%EF%BC%9A%0A%E7%9B%B4%E6%92%AD%E6%97%B6%E9%97%B4%EF%BC%9A%0A%E9%9C%80%E8%A6%81%E4%BA%BA%E6%95%B0%EF%BC%9A%0A%E9%9C%80%E8%A6%81%E6%97%B6%E9%95%BF%EF%BC%9A%0A%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E5%8C%85%E6%9C%88%EF%BC%9A%0A%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E8%AF%84%E8%AE%BA%E6%B0%94%E6%B0%9B%E6%94%AF%E6%8C%81%EF%BC%9A" target="_blank" rel="noopener">Ask Monthly Package</a>
+            </div>
+            <div class="spotlight-visual" aria-hidden="true">
+              <div class="visual-pill">LIVE</div>
+              <div class="visual-lines"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+        </article>
+        <article class="spotlight-slide" aria-label="评论气氛支持">
+          <div class="spotlight-card">
+            <div class="spotlight-main">
+              <div class="slide-label">Comment Atmosphere</div>
+              <h3>评论气氛支持</h3>
+              <p>让直播过程更有互动节奏，适合需要带动气氛的直播间。</p>
+              <div class="big-stat"><b>Available</b><span>互动节奏支持</span></div>
+              <a class="spotlight-cta" href="https://wa.me/60137114191?text=%E4%BD%A0%E5%A5%BD%20Fans%EF%BC%8C%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%20Facebook%20Live%20%E7%9B%B4%E6%92%AD%E4%BA%BA%E6%95%B0%E6%9C%8D%E5%8A%A1%E3%80%82%0A%0A%E7%9B%B4%E6%92%AD%E6%97%A5%E6%9C%9F%EF%BC%9A%0A%E7%9B%B4%E6%92%AD%E6%97%B6%E9%97%B4%EF%BC%9A%0A%E9%9C%80%E8%A6%81%E4%BA%BA%E6%95%B0%EF%BC%9A%0A%E9%9C%80%E8%A6%81%E6%97%B6%E9%95%BF%EF%BC%9A%0A%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E5%8C%85%E6%9C%88%EF%BC%9A%0A%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E8%AF%84%E8%AE%BA%E6%B0%94%E6%B0%9B%E6%94%AF%E6%8C%81%EF%BC%9A" target="_blank" rel="noopener">Ask Comment Support</a>
+            </div>
+            <div class="spotlight-visual" aria-hidden="true">
+              <div class="visual-pill">LIVE</div>
+              <div class="visual-lines"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+        </article>
+        <article class="spotlight-slide" aria-label="定制配套方案">
+          <div class="spotlight-card">
+            <div class="spotlight-main">
+              <div class="slide-label">Custom Package</div>
+              <h3>定制配套方案</h3>
+              <p>人数、评论气氛和长期合作可以组合安排，通过 WhatsApp 确认适合配套。</p>
+              <div class="big-stat"><b>Viewer + Comment</b><span>WhatsApp 报价</span></div>
+              <a class="spotlight-cta" href="https://wa.me/60137114191?text=%E4%BD%A0%E5%A5%BD%20Fans%EF%BC%8C%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%20Facebook%20Live%20%E7%9B%B4%E6%92%AD%E4%BA%BA%E6%95%B0%E6%9C%8D%E5%8A%A1%E3%80%82%0A%0A%E7%9B%B4%E6%92%AD%E6%97%A5%E6%9C%9F%EF%BC%9A%0A%E7%9B%B4%E6%92%AD%E6%97%B6%E9%97%B4%EF%BC%9A%0A%E9%9C%80%E8%A6%81%E4%BA%BA%E6%95%B0%EF%BC%9A%0A%E9%9C%80%E8%A6%81%E6%97%B6%E9%95%BF%EF%BC%9A%0A%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E5%8C%85%E6%9C%88%EF%BC%9A%0A%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E8%AF%84%E8%AE%BA%E6%B0%94%E6%B0%9B%E6%94%AF%E6%8C%81%EF%BC%9A" target="_blank" rel="noopener">Get Custom Quote</a>
+            </div>
+            <div class="spotlight-visual" aria-hidden="true">
+              <div class="visual-pill">LIVE</div>
+              <div class="visual-lines"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+        </article>
         </div>
-        <div class="console-stats">
-        <div class="console-stat"><span>Viewers</span><strong>50 / 100 / Custom</strong></div>
-        <div class="console-stat"><span>Comments</span><strong>Available</strong></div>
-        <div class="console-stat"><span>Monthly</span><strong>Flexible</strong></div>
+        <div class="spotlight-controls">
+        <button class="spotlight-tab" type="button">人数小时</button>
+        <button class="spotlight-tab" type="button">包月人数</button>
+        <button class="spotlight-tab" type="button">评论气氛</button>
+        <button class="spotlight-tab" type="button">定制配套</button>
+        </div>
+        <div class="spotlight-arrows" aria-hidden="false">
+          <button class="spotlight-arrow" type="button" data-prev>‹</button>
+          <button class="spotlight-arrow" type="button" data-next>›</button>
         </div>
       </div>
-      <div class="console-note"><b>Custom package quote</b><small>WhatsApp 咨询</small></div>
     </div>
   </div></div>
 </section>
@@ -382,5 +510,65 @@ h1{font-size:58px;line-height:1.06;letter-spacing:-.055em;margin:0;font-weight:9
 <section class="finalcta"><div><h3>准备让下一场 Facebook Live 更有现场感？</h3><p>发送直播资料，Fans 会通过 WhatsApp 协助确认适合配套。</p></div><a class="btn wa" href="https://wa.me/60137114191?text=%E4%BD%A0%E5%A5%BD%20Fans%EF%BC%8C%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%20Facebook%20Live%20%E7%9B%B4%E6%92%AD%E4%BA%BA%E6%95%B0%E6%9C%8D%E5%8A%A1%E3%80%82%0A%0A%E7%9B%B4%E6%92%AD%E6%97%A5%E6%9C%9F%EF%BC%9A%0A%E7%9B%B4%E6%92%AD%E6%97%B6%E9%97%B4%EF%BC%9A%0A%E9%9C%80%E8%A6%81%E4%BA%BA%E6%95%B0%EF%BC%9A%0A%E9%9C%80%E8%A6%81%E6%97%B6%E9%95%BF%EF%BC%9A%0A%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E5%8C%85%E6%9C%88%EF%BC%9A%0A%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E8%AF%84%E8%AE%BA%E6%B0%94%E6%B0%9B%E6%94%AF%E6%8C%81%EF%BC%9A" target="_blank" rel="noopener">立即咨询</a></section>
 <div class="footer">Fans｜Facebook Live Support</div>
 </div>
+
+<script>
+(() => {
+  const carousels = document.querySelectorAll('.spotlight[data-carousel]');
+  carousels.forEach((carousel) => {
+    const track = carousel.querySelector('.spotlight-track');
+    const slides = Array.from(carousel.querySelectorAll('.spotlight-slide'));
+    const tabs = Array.from(carousel.querySelectorAll('.spotlight-tab'));
+    const prev = carousel.querySelector('[data-prev]');
+    const next = carousel.querySelector('[data-next]');
+    const interval = 12000;
+    const pauseAfterManual = 30000;
+    let index = 0;
+    let timer = null;
+    let pausedUntil = 0;
+    let hover = false;
+    let startX = 0;
+
+    const update = () => {
+      track.style.transform = `translateX(-${index * 100}%)`;
+      tabs.forEach((tab, i) => tab.classList.toggle('active', i === index));
+    };
+
+    const go = (nextIndex, manual = false) => {
+      index = (nextIndex + slides.length) % slides.length;
+      update();
+      if (manual) pausedUntil = Date.now() + pauseAfterManual;
+    };
+
+    const tick = () => {
+      if (!hover && Date.now() > pausedUntil) go(index + 1, false);
+    };
+
+    const start = () => {
+      clearInterval(timer);
+      timer = setInterval(tick, interval);
+    };
+
+    tabs.forEach((tab, i) => tab.addEventListener('click', () => go(i, true)));
+    if (prev) prev.addEventListener('click', () => go(index - 1, true));
+    if (next) next.addEventListener('click', () => go(index + 1, true));
+
+    carousel.addEventListener('mouseenter', () => { hover = true; });
+    carousel.addEventListener('mouseleave', () => { hover = false; });
+
+    carousel.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    }, {passive:true});
+
+    carousel.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 45) go(index + (dx < 0 ? 1 : -1), true);
+    }, {passive:true});
+
+    update();
+    start();
+  });
+})();
+</script>
+
 </body>
 </html>
