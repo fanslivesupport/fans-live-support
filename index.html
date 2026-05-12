@@ -132,155 +132,188 @@ h1{font-size:58px;line-height:1.06;letter-spacing:-.055em;margin:0;font-weight:9
 }
 @media(max-width:420px){.navlinks a{font-size:13px;padding:10px 8px}}
 
-/* V4.9 premium dashboard refinement only */
+/* V5.0 minimal premium dashboard only */
 .supportgrid{
-  grid-template-columns:1.05fr .95fr;
-  gap:16px;
-}
-.livecard.premium-card{
-  position:relative;
-  overflow:hidden;
-  border-radius:34px;
-  padding:20px;
-  background:
-    radial-gradient(circle at 18% 0%,rgba(109,40,217,.11),transparent 34%),
-    radial-gradient(circle at 100% 20%,rgba(37,99,235,.10),transparent 36%),
-    linear-gradient(180deg,#ffffff 0%,#fbfdff 100%);
-  border:1px solid rgba(226,232,240,.92);
-  box-shadow:0 20px 54px rgba(90,90,150,.10);
-}
-.livecard.premium-card:before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(135deg,rgba(255,255,255,.80),rgba(255,255,255,0));
-  pointer-events:none;
-}
-.premium-screen{
-  height:142px;
-  border-radius:28px;
-  padding:18px;
   display:block;
-  position:relative;
-  background:
-    radial-gradient(circle at 82% 30%,#ddd6fe 0 11px,transparent 12px),
-    radial-gradient(circle at 88% 67%,#bfdbfe 0 13px,transparent 14px),
-    radial-gradient(circle at 62% 73%,#c4b5fd 0 13px,transparent 14px),
-    linear-gradient(135deg,#eef2ff,#f9fbff);
-  border:1px solid rgba(255,255,255,.92);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.9);
+  margin-top:30px;
 }
-.premium-screen:after{
+.minimal-console{
+  display:grid;
+  grid-template-columns:1.08fr .92fr;
+  gap:18px;
+  align-items:stretch;
+}
+.console-visual{
+  position:relative;
+  min-height:280px;
+  border-radius:34px;
+  padding:24px;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 82% 20%,rgba(196,181,253,.65) 0 13px,transparent 14px),
+    radial-gradient(circle at 90% 56%,rgba(147,197,253,.70) 0 15px,transparent 16px),
+    radial-gradient(circle at 68% 70%,rgba(167,139,250,.72) 0 16px,transparent 17px),
+    linear-gradient(135deg,#eef2ff,#fbfdff);
+  border:1px solid rgba(226,232,240,.95);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 18px 45px rgba(90,90,150,.08);
+}
+.console-visual:before{
   content:"";
   position:absolute;
-  left:18px;
-  right:18px;
-  bottom:18px;
-  height:10px;
+  left:24px;
+  right:24px;
+  bottom:28px;
+  height:12px;
   border-radius:999px;
-  background:linear-gradient(90deg,rgba(91,77,255,.10),rgba(37,99,235,.06));
+  background:linear-gradient(90deg,rgba(91,77,255,.18),rgba(37,99,235,.08));
 }
-.screen-top{
-  display:flex;
+.console-live{
+  display:inline-flex;
   align-items:center;
-  gap:10px;
-  position:relative;
-  z-index:2;
-}
-.screen-top span{
-  border-radius:18px;
+  gap:9px;
+  border-radius:22px;
   background:linear-gradient(135deg,#6d28d9,#2563eb);
   color:white;
   font-weight:950;
-  padding:14px 18px;
-  box-shadow:0 14px 28px rgba(91,77,255,.22);
+  padding:16px 22px;
+  box-shadow:0 18px 34px rgba(91,77,255,.23);
 }
-.screen-top small{
-  color:#64748b;
-  font-weight:950;
-  letter-spacing:.02em;
+.console-live:before{
+  content:"";
+  width:8px;
+  height:8px;
+  border-radius:99px;
+  background:#fff;
+  box-shadow:0 0 0 6px rgba(255,255,255,.18);
 }
-.screen-wave{
+.console-title{
   position:absolute;
-  left:22px;
-  right:70px;
-  bottom:38px;
-  height:28px;
-  border-radius:16px;
-  background:
-    linear-gradient(90deg,transparent 0 8%,rgba(91,77,255,.12) 8% 14%,transparent 14% 26%,rgba(37,99,235,.10) 26% 32%,transparent 32% 52%,rgba(91,77,255,.14) 52% 60%,transparent 60% 100%);
-  opacity:.9;
+  left:24px;
+  bottom:58px;
 }
-.live-meta h3{font-size:22px}
-.live-meta p{max-width:170px}
-.live-pill{
-  background:linear-gradient(135deg,#dcfce7,#ecfdf5);
+.console-title b{
+  display:block;
+  font-size:28px;
+  line-height:1.05;
+  letter-spacing:-.04em;
+}
+.console-title span{
+  display:block;
+  margin-top:8px;
+  color:#64748b;
+  font-weight:850;
+  font-size:14px;
+}
+.console-chip{
+  position:absolute;
+  right:22px;
+  bottom:52px;
+  background:#ecfdf5;
+  color:#15803d;
   border:1px solid rgba(22,163,74,.10);
+  border-radius:999px;
+  padding:10px 13px;
+  font-size:13px;
+  font-weight:950;
 }
-.live-steps.compact-steps{
-  grid-template-columns:1fr;
-  gap:8px;
+.console-stats{
+  display:grid;
+  gap:12px;
 }
-.live-step{
-  background:rgba(248,250,252,.82);
-  border:1px solid rgba(226,232,240,.88);
-  padding:10px 11px;
-}
-.metrics.refined-metrics{
-  gap:13px;
-}
-.metric.refined{
-  position:relative;
-  overflow:hidden;
-  min-height:112px;
+.console-stat{
+  min-height:82px;
+  border-radius:24px;
+  padding:17px 18px;
   background:
-    radial-gradient(circle at 100% 0%,rgba(109,40,217,.08),transparent 36%),
+    radial-gradient(circle at 100% 0%,rgba(109,40,217,.07),transparent 42%),
     linear-gradient(135deg,#f8fbff,#f5f7ff);
   border:1px solid rgba(255,255,255,.95);
-  box-shadow:0 16px 40px rgba(90,90,150,.08);
+  box-shadow:0 14px 34px rgba(90,90,150,.07);
 }
-.metric.refined div{font-size:14px}
-.metric.refined strong{font-size:21px}
-.metric.refined small{font-size:11px}
-.metric.refined:after{
+.console-stat span{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:#64748b;
+  font-weight:950;
+  font-size:14px;
+}
+.console-stat span:before{
   content:"";
-  position:absolute;
-  left:18px;
-  right:18px;
-  bottom:14px;
-  height:6px;
-  border-radius:999px;
-  background:linear-gradient(90deg,rgba(91,77,255,.32),rgba(37,99,235,.10));
+  width:8px;
+  height:8px;
+  border-radius:99px;
+  background:#5b4dff;
 }
-.quote{
-  background:
-    linear-gradient(135deg,rgba(255,255,255,.96),rgba(248,250,255,.96));
-  color:#0f172a;
+.console-stat strong{
+  display:block;
+  margin-top:10px;
+  font-size:21px;
+  line-height:1.18;
+  color:#5b4dff;
+}
+.console-note{
+  margin-top:16px;
+  border-radius:26px;
+  padding:17px 20px;
+  background:rgba(255,255,255,.80);
   border:1px solid #e2e8f0;
-  box-shadow:0 20px 50px rgba(90,90,150,.10);
+  color:#64748b;
+  font-weight:850;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
 }
-.quote span{color:#64748b}
-.quote b{color:#111827}
-.quote .qbtn{
-  color:white;
-  background:linear-gradient(135deg,#25d366,#16a34a);
+.console-note b{
+  color:#111827;
+}
+.console-note small{
+  color:#15803d;
+  font-weight:950;
 }
 @media(max-width:980px){
-  .supportgrid{grid-template-columns:1fr;gap:14px}
-  .livecard.premium-card{padding:18px;border-radius:30px}
-  .premium-screen{height:112px;border-radius:24px;padding:16px}
-  .screen-top span{padding:12px 16px;border-radius:16px}
-  .screen-top small{font-size:12px}
-  .screen-wave{left:18px;right:58px;bottom:34px;height:22px}
-  .live-meta p{max-width:none}
-  .metrics.refined-metrics{grid-template-columns:1fr}
-  .metric.refined{min-height:96px}
+  .minimal-console{
+    grid-template-columns:1fr;
+  }
+  .console-visual{
+    min-height:220px;
+    border-radius:28px;
+    padding:20px;
+  }
+  .console-title{
+    left:20px;
+    bottom:50px;
+  }
+  .console-title b{
+    font-size:25px;
+  }
+  .console-chip{
+    right:18px;
+    bottom:46px;
+  }
+  .console-stats{
+    grid-template-columns:1fr;
+  }
+  .console-stat{
+    min-height:76px;
+    border-radius:22px;
+    padding:15px 16px;
+  }
+  .console-note{
+    display:block;
+    padding:16px;
+  }
+  .console-note small{
+    display:block;
+    margin-top:6px;
+  }
 }
 
 </style>
 </head>
 <body>
-<!-- v4.9-dashboard-premium -->
+<!-- v5.0-dashboard-minimal -->
 <div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 <div class="wrap">
 <header class="nav">
@@ -308,26 +341,20 @@ h1{font-size:58px;line-height:1.06;letter-spacing:-.055em;margin:0;font-weight:9
   <div class="panel"><div class="inner">
     <div class="systemtop"><div><div class="kicker">Live Room Support System</div><h2>Fans Live Support</h2><p>观看氛围 · 评论节奏 · 配套报价</p></div><div class="status">WhatsApp Ready</div></div>
     <div class="supportgrid">
-      <div class="livecard premium-card">
-        <div class="livevisual premium-screen">
-          <div class="screen-top"><span>LIVE</span><small>Room Pulse</small></div>
-          <div class="screen-wave"></div>
+      <div class="minimal-console">
+        <div class="console-visual">
+          <div class="console-live">LIVE</div>
+          <div class="console-title"><b>Facebook Live Room</b><span>现场感 · 观看氛围</span></div>
+          <div class="console-chip">WhatsApp Ready</div>
         </div>
-        <div class="live-meta"><div><h3>Facebook Live Room</h3><p>现场感、观看氛围与互动节奏</p></div><div class="live-pill">Support Active</div></div>
-        <div class="live-steps compact-steps">
-          <div class="live-step"><b>Live status</b><span>Ready</span></div>
-          <div class="live-step"><b>Support type</b><span>Viewer + Comment</span></div>
-          <div class="live-step"><b>Quote method</b><span>WhatsApp</span></div>
+        <div class="console-stats">
+        <div class="console-stat"><span>Viewers</span><strong>50 / 100 / Custom</strong></div>
+        <div class="console-stat"><span>Comments</span><strong>Available</strong></div>
+        <div class="console-stat"><span>Monthly</span><strong>Flexible</strong></div>
         </div>
       </div>
-      <div class="metrics refined-metrics">
-        <div class="metric refined"><div>Viewers</div><strong>50 / 100 / Custom</strong><small>按人数与时长安排</small></div>
-        <div class="metric refined"><div>Comments</div><strong>Available</strong><small>评论气氛支持</small></div>
-        <div class="metric refined"><div>Monthly</div><strong>Flexible</strong><small>适合长期直播客户</small></div>
-      </div>
+      <div class="console-note"><b>Custom package quote</b><small>WhatsApp 咨询</small></div>
     </div>
-
-    <div class="quote"><div><span>Starter Reference</span><b>50人 / 1小时 / RM3 起</b></div><a class="qbtn" href="https://wa.me/60137114191?text=%E4%BD%A0%E5%A5%BD%20Fans%EF%BC%8C%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%20Facebook%20Live%20%E7%9B%B4%E6%92%AD%E4%BA%BA%E6%95%B0%E6%9C%8D%E5%8A%A1%E3%80%82%0A%0A%E7%9B%B4%E6%92%AD%E6%97%A5%E6%9C%9F%EF%BC%9A%0A%E7%9B%B4%E6%92%AD%E6%97%B6%E9%97%B4%EF%BC%9A%0A%E9%9C%80%E8%A6%81%E4%BA%BA%E6%95%B0%EF%BC%9A%0A%E9%9C%80%E8%A6%81%E6%97%B6%E9%95%BF%EF%BC%9A%0A%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E5%8C%85%E6%9C%88%EF%BC%9A%0A%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E8%AF%84%E8%AE%BA%E6%B0%94%E6%B0%9B%E6%94%AF%E6%8C%81%EF%BC%9A" target="_blank" rel="noopener">Quote via WhatsApp</a></div>
   </div></div>
 </section>
 <section class="lightconcept"><div class="conceptinner"><div><div class="kicker">More Than Viewers</div><h2>不只是人数，而是直播间现场感加持。</h2></div><p>Fans 将观看人数、评论气氛和长期配套整合成清楚的 Facebook Live 支持方案，让客户根据直播时间、人数、时长和合作方式，通过 WhatsApp 获取适合配套。</p></div></section>
