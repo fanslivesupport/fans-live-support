@@ -477,10 +477,118 @@ h1{font-size:58px;line-height:1.06;letter-spacing:-.055em;margin:0;font-weight:9
   }
 }
 
+
+/* V5.7 mobile edge fix - prevent right-side clipping */
+html, body{
+  max-width:100%;
+  overflow-x:hidden;
+}
+img, svg, video, canvas{
+  max-width:100%;
+}
+@media(max-width:980px){
+  .wrap{
+    width:100%;
+    max-width:100%;
+    padding-left:14px;
+    padding-right:14px;
+    overflow-x:hidden;
+  }
+  .nav,
+  .hero,
+  .panel,
+  .inner,
+  .lightconcept,
+  .service,
+  .bottom,
+  .box,
+  .finalcta{
+    width:100%;
+    max-width:100%;
+    min-width:0;
+  }
+  .hero{
+    grid-template-columns:1fr;
+    overflow:hidden;
+  }
+  .hero > *,
+  .panel *,
+  .inner *,
+  .square-spotlight *,
+  .actions *,
+  .ticks *{
+    min-width:0;
+  }
+  h1{
+    max-width:100%;
+    overflow-wrap:anywhere;
+    word-break:normal;
+  }
+  .lead{
+    max-width:100%;
+    overflow-wrap:anywhere;
+  }
+  .actions{
+    width:100%;
+  }
+  .actions .btn{
+    max-width:100%;
+    white-space:normal;
+    text-align:center;
+  }
+  .ticks{
+    max-width:100%;
+  }
+  .square-spotlight{
+    max-width:100%;
+    overflow:hidden;
+  }
+  .square-card-shell{
+    width:100%;
+    max-width:330px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .square-tabs{
+    width:100%;
+    max-width:330px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
+@media(max-width:430px){
+  .wrap{
+    padding-left:12px;
+    padding-right:12px;
+  }
+  h1{
+    font-size:32px;
+  }
+  .lead{
+    font-size:15.5px;
+    line-height:1.58;
+  }
+  .nav{
+    padding-left:10px;
+    padding-right:10px;
+  }
+  .logo-img{
+    max-width:210px;
+  }
+  .nav > .btn{
+    max-width:44%;
+    white-space:nowrap;
+  }
+  .square-card-shell,
+  .square-tabs{
+    max-width:318px;
+  }
+}
+
 </style>
 </head>
 <body>
-<!-- v5.6-clean-compact-square -->
+<!-- v5.7-mobile-edge-fix -->
 <div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 <div class="wrap">
 <header class="nav">
