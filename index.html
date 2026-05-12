@@ -32,40 +32,35 @@ body{
 .b3{width:430px;height:430px;background:#ddd6fe;right:260px;top:820px}
 .wrap{max-width:1280px;margin:auto;padding:36px 28px 70px}
 .nav{
-  height:84px;
+  height:78px;
   border:1px solid #eef2ff;
   background:rgba(255,255,255,.82);
   border-radius:30px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:0 24px;
+  padding:0 22px;
   box-shadow:0 18px 45px rgba(90,90,140,.09);
   backdrop-filter:blur(18px);
 }
 .brand{display:flex;align-items:center;text-decoration:none;color:inherit}
-.logo-img{
-  height:58px;
-  width:auto;
-  display:block;
-  object-fit:contain;
-}
-.navlinks{display:flex;gap:28px;font-weight:850;font-size:14px;color:var(--muted)}
+.logo-img{height:56px;width:auto;display:block;object-fit:contain}
+.navlinks{display:flex;gap:24px;font-weight:850;font-size:14px;color:var(--muted)}
 .navlinks a{color:inherit;text-decoration:none}
 .navlinks .active{color:var(--ink)}
 .btn{
-  border:0;border-radius:20px;padding:15px 24px;font-weight:950;font-size:15px;
+  border:0;border-radius:20px;padding:14px 22px;font-weight:950;font-size:15px;
   text-decoration:none;display:inline-flex;gap:9px;align-items:center;justify-content:center;transition:.2s;
 }
 .btn:hover{transform:translateY(-2px)}
 .wa{background:var(--wa);color:white;box-shadow:0 16px 35px rgba(37,211,102,.22)}
 .primary{background:linear-gradient(135deg,#6d28d9,#2563eb);color:white;box-shadow:0 20px 45px rgba(91,77,255,.24)}
 .ghost{background:white;color:#1f2937;border:1px solid var(--line)}
-.hero{display:grid;grid-template-columns:.95fr 1.05fr;gap:58px;align-items:center;padding:76px 0 84px}
+.hero{display:grid;grid-template-columns:.95fr 1.05fr;gap:58px;align-items:center;padding:68px 0 80px}
 .pill{display:inline-flex;padding:12px 18px;border-radius:999px;background:white;border:1px solid #ddd6fe;color:#5b21b6;font-weight:950;box-shadow:0 12px 30px rgba(91,77,255,.09);margin-bottom:30px}
-h1{font-size:68px;line-height:1.06;letter-spacing:-.055em;margin:0;font-weight:950}
+h1{font-size:62px;line-height:1.06;letter-spacing:-.055em;margin:0;font-weight:950}
 .grad{display:block;background:linear-gradient(90deg,#6d28d9,#4f46e5,#2563eb);-webkit-background-clip:text;color:transparent}
-.lead{font-size:21px;line-height:1.72;color:var(--muted);max-width:590px;margin:28px 0 0}
+.lead{font-size:20px;line-height:1.7;color:var(--muted);max-width:590px;margin:28px 0 0}
 .actions{display:flex;gap:14px;margin-top:35px}
 .ticks{display:flex;gap:24px;flex-wrap:wrap;margin-top:28px;color:var(--muted);font-weight:850}
 .ticks span:before{content:'✓';color:var(--violet);margin-right:8px}
@@ -126,15 +121,15 @@ h1{font-size:68px;line-height:1.06;letter-spacing:-.055em;margin:0;font-weight:9
 .footer{padding:34px 0 0;color:#94a3b8;text-align:center;font-size:14px}
 @media(max-width:980px){
   .wrap{padding:20px 16px 42px}
-  .nav{height:auto;padding:16px;border-radius:24px}
+  .nav{height:auto;padding:14px 16px;border-radius:24px}
   .navlinks{display:none}
   .hero,.conceptinner,.service,.bottom{grid-template-columns:1fr}
   .cards{grid-template-columns:1fr}
   .hero{padding:42px 0 54px;gap:30px}
-  h1{font-size:44px}
+  h1{font-size:42px}
   .lead{font-size:18px}
   .actions{flex-direction:column}
-  .btn{width:100%}
+  .logo-img{height:48px}.btn{width:100%}
   .panel{border-radius:34px;padding:16px}
   .inner{padding:22px;border-radius:28px}
   .systemtop{display:block}
@@ -157,7 +152,7 @@ h1{font-size:68px;line-height:1.06;letter-spacing:-.055em;margin:0;font-weight:9
 <div class="wrap">
 <header class="nav">
   <a class="brand" href="#" aria-label="Fans Facebook Live Support">
-    <img class="logo-img" src="fans-logo.png" alt="Fans Facebook Live Support logo">
+    <img class="logo-img" src="fans-logo-cropped.png" alt="Fans Facebook Live Support logo">
   </a>
   <nav class="navlinks">
     <a class="active" href="#">中文</a>
