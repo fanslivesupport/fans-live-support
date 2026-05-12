@@ -428,10 +428,65 @@ h1{font-size:58px;line-height:1.06;letter-spacing:-.055em;margin:0;font-weight:9
   }
 }
 
+
+/* V5.4 further compact dashboard frame */
+@media(min-width:981px){
+  .hero{
+    grid-template-columns:1.12fr .88fr;
+    gap:48px;
+  }
+  .panel{
+    max-width:600px;
+    width:100%;
+    margin-left:auto;
+    margin-right:0;
+    border-radius:40px;
+    padding:20px;
+  }
+  .inner{
+    border-radius:34px;
+    padding:24px;
+  }
+  .square-card-shell{
+    width:min(342px,100%);
+    border-radius:28px;
+  }
+  .square-tabs,
+  .square-arrows{
+    width:min(342px,100%);
+  }
+  .square-slide{
+    padding:23px;
+  }
+  .square-slide h3{
+    font-size:27px;
+  }
+  .square-mid{
+    grid-template-columns:1fr 104px;
+    gap:12px;
+  }
+  .systemtop h2{
+    font-size:34px;
+  }
+  .systemtop p{
+    font-size:14px;
+  }
+}
+@media(min-width:981px) and (max-width:1180px){
+  .panel{
+    max-width:560px;
+  }
+  .square-card-shell,
+  .square-tabs,
+  .square-arrows{
+    width:min(320px,100%);
+  }
+}
+
 </style>
 </head>
 <body>
-<!-- v5.3-dashboard-compact-frame -->
+<!-- v5.4-dashboard-further-compact -->
 <div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 <div class="wrap">
 <header class="nav">
