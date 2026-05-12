@@ -61,6 +61,7 @@ body{
 h1{font-size:62px;line-height:1.06;letter-spacing:-.055em;margin:0;font-weight:950}
 .grad{display:block;background:linear-gradient(90deg,#6d28d9,#4f46e5,#2563eb);-webkit-background-clip:text;color:transparent}
 .lead{font-size:20px;line-height:1.7;color:var(--muted);max-width:590px;margin:28px 0 0}
+.mobile-lead{display:none}
 .actions{display:flex;gap:14px;margin-top:35px}
 .ticks{display:flex;gap:24px;flex-wrap:wrap;margin-top:28px;color:var(--muted);font-weight:850}
 .ticks span:before{content:'✓';color:var(--violet);margin-right:8px}
@@ -120,16 +121,39 @@ h1{font-size:62px;line-height:1.06;letter-spacing:-.055em;margin:0;font-weight:9
 .finalcta p{margin:0;color:#cbd5e1}
 .footer{padding:34px 0 0;color:#94a3b8;text-align:center;font-size:14px}
 @media(max-width:980px){
-  .wrap{padding:20px 16px 42px}
-  .nav{height:auto;padding:14px 16px;border-radius:24px}
+  /* V4.3 mobile refinement */
+  body{background:#fafbff}
+  .wrap{padding:18px 16px 42px}
+  .nav{height:auto;padding:12px 14px;border-radius:26px;gap:10px}
+  .logo-img{height:42px}
+  .nav .btn{width:auto;padding:12px 16px;border-radius:18px;font-size:15px;white-space:nowrap}
+  .hero{padding:34px 0 36px;gap:24px}
+  .pill{font-size:15px;padding:10px 14px;margin-bottom:22px}
+  h1{font-size:36px;line-height:1.08;letter-spacing:-.045em}
+  .desktop-lead{display:none}
+  .mobile-lead{display:block;font-size:17px;line-height:1.65;margin-top:22px}
+  .actions{margin-top:26px;gap:12px}
+  .actions .btn{padding:14px 18px;border-radius:20px;font-size:16px}
+  .ticks{margin-top:22px;gap:14px 18px;font-size:16px}
+  .panel{margin-top:18px}
+  .systemtop h2,.section h2,.lightconcept h2,.box h2,.service h2{font-size:30px}
+  .systemtop p{font-size:15px;line-height:1.45}
+  .inner{padding:20px;border-radius:30px}
+  .livevisual{height:102px}
+  .livecard h3{font-size:22px}
+  .metric strong{font-size:20px}
+  .quote b{font-size:21px}
+
+  .wrap{padding:18px 16px 42px}
+  .nav{height:auto;padding:12px 14px;border-radius:26px}
   .navlinks{display:none}
   .hero,.conceptinner,.service,.bottom{grid-template-columns:1fr}
   .cards{grid-template-columns:1fr}
   .hero{padding:42px 0 54px;gap:30px}
-  h1{font-size:42px}
+  h1{font-size:36px}
   .lead{font-size:18px}
   .actions{flex-direction:column}
-  .logo-img{height:48px}.btn{width:100%}
+  .logo-img{height:42px}.btn{width:100%}
   .panel{border-radius:34px;padding:16px}
   .inner{padding:22px;border-radius:28px}
   .systemtop{display:block}
@@ -168,7 +192,8 @@ h1{font-size:62px;line-height:1.06;letter-spacing:-.055em;margin:0;font-weight:9
   <div>
     <div class="pill">✦ Premium Facebook Live Support</div>
     <h1>让 Facebook Live <span class="grad">多一层现场感加持</span></h1>
-    <p class="lead">Fans 提供 Facebook Live 人数、评论气氛与定制配套支持，适合直播卖货、活动直播与长期运营客户，通过 WhatsApp 快速确认适合安排。</p>
+    <p class="lead desktop-lead">Fans 提供 Facebook Live 人数、评论气氛与定制配套支持，适合直播卖货、活动直播与长期运营客户，通过 WhatsApp 快速确认适合安排。</p>
+    <p class="lead mobile-lead">Fans 提供 Facebook Live 人数、评论气氛与定制配套支持，适合直播卖货、活动直播与长期运营客户。</p>
     <div class="actions">
       <a class="btn primary" href="https://wa.me/60137114191?text=%E4%BD%A0%E5%A5%BD%20Fans%EF%BC%8C%E6%88%91%E6%83%B3%E4%BA%86%E8%A7%A3%20Facebook%20Live%20%E7%9B%B4%E6%92%AD%E4%BA%BA%E6%95%B0%E6%9C%8D%E5%8A%A1%E3%80%82%0A%0A%E7%9B%B4%E6%92%AD%E6%97%A5%E6%9C%9F%EF%BC%9A%0A%E7%9B%B4%E6%92%AD%E6%97%B6%E9%97%B4%EF%BC%9A%0A%E9%9C%80%E8%A6%81%E4%BA%BA%E6%95%B0%EF%BC%9A%0A%E9%9C%80%E8%A6%81%E6%97%B6%E9%95%BF%EF%BC%9A%0A%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E5%8C%85%E6%9C%88%EF%BC%9A%0A%E6%98%AF%E5%90%A6%E9%9C%80%E8%A6%81%E8%AF%84%E8%AE%BA%E6%B0%94%E6%B0%9B%E6%94%AF%E6%8C%81%EF%BC%9A" target="_blank" rel="noopener">WhatsApp 咨询定制配套 →</a>
       <a class="btn ghost" href="#price">查看参考价格</a>
