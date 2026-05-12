@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fans｜Facebook Live Viewer & Engagement Support</title>
+<meta name="description" content="Fans provides Facebook Live viewer support, comment atmosphere support, monthly support, and custom packages through WhatsApp.">
+<style>
+:root{
+  --bg:#fafbff;
+  --ink:#0f172a;
+  --muted:#64748b;
+  --line:#e2e8f0;
+  --soft:#f5f3ff;
+  --violet:#5b4dff;
+  --purple:#6d28d9;
+  --blue:#2563eb;
+  --wa:#25d366;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:Inter,Arial,'Noto Sans SC','Microsoft YaHei',sans-serif;
+}
+.bg{position:fixed;inset:0;z-index:-1;overflow:hidden}
+.blob{position:absolute;border-radius:999px;filter:blur(86px);opacity:.52}
+.b1{width:540px;height:540px;background:#c4b5fd;right:-180px;top:-180px}
+.b2{width:520px;height:520px;background:#bfdbfe;left:-230px;top:250px}
+.b3{width:430px;height:430px;background:#ddd6fe;right:260px;top:820px}
+.wrap{max-width:1280px;margin:auto;padding:36px 28px 70px}
+.nav{
+  height:76px;
+  border:1px solid #eef2ff;
+  background:rgba(255,255,255,.82);
+  border-radius:30px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 22px;
+  box-shadow:0 18px 45px rgba(90,90,140,.09);
+  backdrop-filter:blur(18px);
+}
+.brand{display:flex;align-items:center;text-decoration:none;color:inherit}
+.logo-img{height:54px;width:auto;display:block;object-fit:contain}
+.navlinks{display:flex;gap:23px;font-weight:850;font-size:14px;color:var(--muted)}
+.navlinks a{color:inherit;text-decoration:none}
+.navlinks .active{color:var(--ink)}
+.btn{
+  border:0;border-radius:20px;padding:14px 22px;font-weight:950;font-size:15px;
+  text-decoration:none;display:inline-flex;gap:9px;align-items:center;justify-content:center;transition:.2s;
+}
+.btn:hover{transform:translateY(-2px)}
+.wa{background:var(--wa);color:white;box-shadow:0 16px 35px rgba(37,211,102,.22)}
+.primary{background:linear-gradient(135deg,#6d28d9,#2563eb);color:white;box-shadow:0 20px 45px rgba(91,77,255,.24)}
+.ghost{background:white;color:#1f2937;border:1px solid var(--line)}
+.hero{display:grid;grid-template-columns:.95fr 1.05fr;gap:58px;align-items:start;padding:54px 0 74px}
+.pill{display:inline-flex;padding:12px 18px;border-radius:999px;background:white;border:1px solid #ddd6fe;color:#5b21b6;font-weight:950;box-shadow:0 12px 30px rgba(91,77,255,.09);margin-bottom:30px}
+h1{font-size:58px;line-height:1.06;letter-spacing:-.055em;margin:0;font-weight:950}
+.grad{display:block;background:linear-gradient(90deg,#6d28d9,#4f46e5,#2563eb);-webkit-background-clip:text;color:transparent}
+.lead{font-size:19px;line-height:1.68;color:var(--muted);max-width:570px;margin:24px 0 0}
+.mobile-lead{display:none}
+.actions{display:flex;gap:14px;margin-top:30px}
+.ticks{display:flex;gap:22px;flex-wrap:wrap;margin-top:24px;color:var(--muted);font-weight:850}
+.ticks span:before{content:'✓';color:var(--violet);margin-right:8px}
+.panel{background:rgba(255,255,255,.86);border:1px solid #e9d5ff;border-radius:50px;padding:28px;box-shadow:0 35px 90px rgba(95,70,200,.15)}
+.inner{border:1px solid #eef2ff;background:#fcfdff;border-radius:42px;padding:30px}
+.systemtop{display:flex;align-items:start;justify-content:space-between;gap:20px}
+.kicker{letter-spacing:.18em;font-size:13px;font-weight:950;color:#6d28d9;text-transform:uppercase}
+.systemtop h2,.section h2,.lightconcept h2,.box h2,.service h2{font-size:40px;line-height:1.16;letter-spacing:-.04em;margin:10px 0 0}
+.systemtop p{margin:7px 0 0;color:var(--muted);font-weight:700}
+.status{background:#dcfce7;color:#15803d;border-radius:999px;padding:11px 18px;font-weight:950;white-space:nowrap}
+/* V4.4 dashboard refinement */
+.supportgrid{display:grid;grid-template-columns:1.08fr .92fr;gap:18px;margin-top:28px}
+.livecard{
+  border-radius:32px;
+  background:linear-gradient(180deg,#ffffff 0%,#fbfcff 100%);
+  border:1px solid #e2e8f0;
+  padding:22px;
+  box-shadow:0 18px 45px rgba(90,90,150,.08);
+}
+.livevisual{
+  height:132px;
+  border-radius:28px;
+  background:
+    radial-gradient(circle at 78% 28%,#ddd6fe 0 12px,transparent 13px),
+    radial-gradient(circle at 86% 62%,#bfdbfe 0 14px,transparent 15px),
+    radial-gradient(circle at 62% 70%,#c4b5fd 0 14px,transparent 15px),
+    linear-gradient(135deg,#eef2ff,#f8fbff);
+  display:flex;
+  align-items:center;
+  padding:24px;
+  position:relative;
+  overflow:hidden;
+}
+.livevisual:after{
+  content:"";
+  position:absolute;
+  inset:auto 18px 16px 18px;
+  height:10px;
+  border-radius:999px;
+  background:rgba(91,77,255,.08);
+}
+.livebadge{
+  border-radius:20px;
+  background:linear-gradient(135deg,#6d28d9,#2563eb);
+  color:white;
+  font-weight:950;
+  padding:17px 21px;
+  box-shadow:0 14px 28px rgba(91,77,255,.22);
+  position:relative;
+  z-index:2;
+}
+.live-meta{
+  margin-top:18px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.live-meta h3{font-size:23px;margin:0;letter-spacing:-.03em}
+.live-meta p{margin:5px 0 0;color:var(--muted);font-weight:700;font-size:14px}
+.live-pill{
+  border-radius:999px;
+  background:#ecfdf5;
+  color:#15803d;
+  font-size:13px;
+  font-weight:950;
+  padding:9px 12px;
+  white-space:nowrap;
+}
+.live-steps{
+  display:grid;
+  gap:10px;
+  margin-top:18px;
+}
+.live-step{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:11px 12px;
+  border-radius:16px;
+  background:#f8fafc;
+  border:1px solid #edf2f7;
+  color:#475569;
+  font-weight:850;
+  font-size:13px;
+}
+.live-step b{color:#111827}
+.live-step span{color:#5b4dff}
+.metrics{display:grid;gap:14px}
+.metric{
+  border-radius:26px;
+  padding:18px;
+  background:linear-gradient(135deg,#eef2ff,#f8fafc);
+  border:1px solid #ffffff;
+  box-shadow:0 14px 34px rgba(90,90,150,.07);
+}
+.metric:nth-child(2){background:linear-gradient(135deg,#eff6ff,#f8fafc)}
+.metric:nth-child(3){background:linear-gradient(135deg,#f5f3ff,#f8fafc)}
+.metric div{
+  color:var(--muted);
+  font-weight:950;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.metric div:before{
+  content:"";
+  width:8px;
+  height:8px;
+  border-radius:999px;
+  background:#5b4dff;
+  display:inline-block;
+}
+.metric strong{display:block;font-size:22px;margin-top:9px;color:var(--violet);line-height:1.2}
+.metric small{display:block;color:#64748b;font-size:12px;font-weight:800;margin-top:7px}
+.quote{
+  margin-top:18px;
+  background:linear-gradient(135deg,#111827,#1e1b4b);
+  border-radius:30px;
+  color:white;
+  padding:23px 26px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  box-shadow:0 20px 45px rgba(17,24,39,.14);
+}
+.quote span{display:block;color:#cbd5e1;font-weight:950;margin-bottom:8px}
+.quote b{font-size:25px}
+.quote .qbtn{background:var(--wa);border-radius:20px;padding:14px 20px;font-weight:950;color:white;text-decoration:none;white-space:nowrap;box-shadow:0 14px 28px rgba(37,211,102,.20)}
+
+.lightconcept{background:white;border:1px solid #ede9fe;border-radius:46px;padding:28px;margin:4px 0 84px;box-shadow:0 25px 65px rgba(91,77,255,.09)}
+.conceptinner{border-radius:38px;background:#f5f3ff;padding:32px;display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.conceptinner p{font-size:19px;line-height:1.75;color:var(--muted);margin:0}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:28px}
+.section-head p{max-width:420px;color:var(--muted);line-height:1.65;font-size:17px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:rgba(255,255,255,.88);border:1px solid #eef2ff;border-radius:38px;padding:34px;box-shadow:0 24px 60px rgba(90,90,150,.09)}
+.icon{width:60px;height:60px;border-radius:20px;background:linear-gradient(135deg,#ede9fe,#dbeafe);display:grid;place-items:center;font-size:27px;margin-bottom:28px}
+.card small{font-weight:950;color:#7c3aed;letter-spacing:.14em}
+.card h3{font-size:28px;letter-spacing:-.03em;margin:12px 0 14px}
+.card p{color:var(--muted);line-height:1.7;font-size:17px;margin:0}
+.service{margin-top:76px;background:white;border:1px solid #eef2ff;border-radius:42px;padding:40px;box-shadow:0 24px 65px rgba(90,90,150,.09);display:grid;grid-template-columns:.9fr 1.1fr;gap:36px;align-items:center}
+.service p{color:var(--muted);line-height:1.65;font-size:17px;max-width:420px}
+.servicegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.svc{background:#f8fafc;border:1px solid #e2e8f0;border-radius:26px;padding:20px}
+.svc b{display:block;font-size:19px;margin-bottom:10px}
+.svc span{color:var(--muted);font-size:14px;font-weight:750;line-height:1.55}
+.bottom{display:grid;grid-template-columns:.9fr 1.1fr;gap:24px;margin-top:78px}
+.box{background:white;border:1px solid #eef2ff;border-radius:42px;padding:40px;box-shadow:0 24px 65px rgba(90,90,150,.09)}
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}
+.chip{background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:14px 16px;font-weight:900;color:#475569}
+.pricebox{display:flex;gap:28px;justify-content:space-between}
+.pricecard{min-width:200px;border-radius:34px;background:linear-gradient(135deg,#6d28d9,#2563eb);color:white;padding:28px;box-shadow:0 20px 50px rgba(91,77,255,.24)}
+.pricecard .rm{font-size:66px;font-weight:950;line-height:1}
+.box p{color:var(--muted);line-height:1.7;font-size:17px;max-width:430px}
+.finalcta{margin-top:66px;border-radius:36px;background:#111827;color:white;padding:28px 40px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 20px 60px rgba(17,24,39,.16);gap:20px}
+.finalcta h3{font-size:28px;margin:0 0 8px}
+.finalcta p{margin:0;color:#cbd5e1}
+.footer{padding:34px 0 0;color:#94a3b8;text-align:center;font-size:14px}
+@media(max-width:980px){
+  /* V4.5 mobile balance */
+  .nav{padding:11px 13px}
+  .logo-img{height:40px}
+  .nav .btn{padding:11px 15px;font-size:14px}
+  .hero{padding:30px 0 34px}
+  .pill{margin-bottom:20px}
+  h1{font-size:34px;line-height:1.08}
+  .mobile-lead{font-size:16px;line-height:1.62;margin-top:20px}
+  .actions{margin-top:24px}
+  .ticks{font-size:15px;gap:12px 16px}
+  .panel{margin-top:14px}
+
+  /* V4.4 dashboard mobile */
+  .supportgrid{gap:14px;margin-top:22px}
+  .livevisual{height:96px;padding:20px;border-radius:24px}
+  .livebadge{padding:14px 18px;border-radius:18px}
+  .live-meta{display:block;margin-top:16px}
+  .live-pill{display:inline-block;margin-top:10px}
+  .live-steps{margin-top:14px}
+  .live-step{font-size:12px;padding:10px 11px}
+  .metric{padding:16px;border-radius:22px}
+  .metric strong{font-size:19px}
+  .metric small{font-size:11px}
+  .quote{padding:20px;border-radius:26px}
+
+  /* V4.3 mobile refinement */
+  body{background:#fafbff}
+  .wrap{padding:18px 16px 42px}
+  .nav{height:auto;padding:12px 14px;border-radius:26px;gap:10px}
+  .logo-img{height:42px}
+  .nav .btn{width:auto;padding:12px 16px;border-radius:18px;font-size:15px;white-space:nowrap}
+  .hero{padding:34px 0 36px;gap:24px}
+  .pill{font-size:15px;padding:10px 14px;margin-bottom:22px}
+  h1{font-size:34px;line-height:1.08;letter-spacing:-.045em}
+  .desktop-lead{display:none}
+  .mobile-lead{display:block;font-size:17px;line-height:1.65;margin-top:22px}
+  .actions{margin-top:26px;gap:12px}
+  .actions .btn{padding:14px 18px;border-radius:20px;font-size:16px}
+  .ticks{margin-top:22px;gap:14px 18px;font-size:16px}
+  .panel{margin-top:18px}
+  .systemtop h2,.section h2,.lightconcept h2,.box h2,.service h2{font-size:30px}
+  .systemtop p{font-size:15px;line-height:1.45}
+  .inner{padding:20px;border-radius:30px}
+  .livevisual{height:102px}
+  .livecard h3{font-size:22px}
+  .metric strong{font-size:20px}
+  .quote b{font-size:21px}
+
+  .wrap{padding:18px 16px 42px}
+  .nav{height:auto;padding:12px 14px;border-radius:26px}
+  .navlinks{display:none}
+  .hero,.conceptinner,.service,.bottom{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr}
+  .hero{padding:42px 0 54px;gap:30px}
+  h1{font-size:36px}
+  .lead{font-size:18px}
+  .actions{flex-direction:column}
+  .logo-img{height:42px}.btn{width:100%}
+  .panel{border-radius:34px;padding:16px}
+  .inner{padding:22px;border-radius:28px}
+  .systemtop{display:block}
+  .status{display:inline-block;margin-top:16px}
+  .systemtop h2,.section h2,.lightconcept h2,.box h2,.service h2{font-size:32px}
+  .supportgrid{grid-template-columns:1fr}
+  .quote,.finalcta,.pricebox{display:block}
+  .quote .qbtn{display:block;margin-top:16px;text-align:center}
+  .finalcta .btn{margin-top:20px}
+  .section-head{display:block}
+  .servicegrid{grid-template-columns:1fr}
+  .pricecard{margin-top:24px}
+  .chips{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<!-- Version 4.5 refined hero balance -->
+<div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+
+<div class="wrap">
+<header class="nav">
+  <a class="brand" href="#" aria-label="Fans Facebook Live Support">
+    <img class="logo-img" src="fans-logo-cropped.png" alt="Fans Facebook Live Support logo">
+  </a>
+  <nav class="navlinks">
+    <a href="index.html">中文</a>
+    <a class="active" href="english.html">English</a>
+    <a href="#">Bahasa Melayu</a>
+    <a href="#services">服务</a>
+    <a href="#price">价格</a>
+  </nav>
+  <a class="btn wa" href="https://wa.me/60137114191?text=Hi%20Fans%2C%20I%20would%20like%20to%20ask%20about%20Facebook%20Live%20viewer%20support.%0A%0ALive%20date%3A%0ALive%20time%3A%0AViewer%20quantity%3A%0ADuration%3A%0AMonthly%20package%20needed%3A%0AComment%20atmosphere%20support%20needed%3A" target="_blank" rel="noopener">Ask on WhatsApp</a>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="pill">✦ Premium Facebook Live Support</div>
+    <h1>Add More Live Presence <span class="grad">to Your Facebook Live</span></h1>
+    <p class="lead desktop-lead">Fans provides Facebook Live viewer support, comment atmosphere support, and custom packages for live sellers, event streams, and long-term live operations. Confirm a suitable package quickly through WhatsApp.</p>
+    <p class="lead mobile-lead">Fans provides Facebook Live viewer support, comment atmosphere support, and custom packages for live sellers, event streams, and long-term live operations.</p>
+    <div class="actions">
+      <a class="btn primary" href="https://wa.me/60137114191?text=Hi%20Fans%2C%20I%20would%20like%20to%20ask%20about%20Facebook%20Live%20viewer%20support.%0A%0ALive%20date%3A%0ALive%20time%3A%0AViewer%20quantity%3A%0ADuration%3A%0AMonthly%20package%20needed%3A%0AComment%20atmosphere%20support%20needed%3A" target="_blank" rel="noopener">Ask for Custom Package →</a>
+      <a class="btn ghost" href="#price">View Reference Price</a>
+    </div>
+    <div class="ticks"><span>Hourly</span><span>Monthly</span><span>Comment Atmosphere</span><span>Custom Package</span></div>
+  </div>
+
+  <div class="panel"><div class="inner">
+    <div class="systemtop">
+      <div><div class="kicker">Live Room Support System</div><h2>Fans Live Support</h2><p>Viewer presence · comment rhythm · package quote</p></div>
+      <div class="status">WhatsApp Ready</div>
+    </div>
+
+    <div class="supportgrid">
+      <div class="livecard">
+        <div class="livevisual">
+          <div class="livebadge">LIVE</div>
+        </div>
+        <div class="live-meta">
+          <div>
+            <h3>Facebook Live Room</h3>
+            <p>Live presence, viewer atmosphere, and interaction rhythm</p>
+          </div>
+          <div class="live-pill">Support Active</div>
+        </div>
+        <div class="live-steps">
+          <div class="live-step"><b>Live status</b><span>Ready</span></div>
+          <div class="live-step"><b>Support type</b><span>Viewer + Comment</span></div>
+          <div class="live-step"><b>Quote method</b><span>WhatsApp</span></div>
+        </div>
+      </div>
+
+      <div class="metrics">
+        <div class="metric"><div>Viewers</div><strong>50 / 100 / Custom</strong><small>Arranged by quantity and duration</small></div>
+        <div class="metric"><div>Comments</div><strong>Available</strong><small>Comment atmosphere support</small></div>
+        <div class="metric"><div>Monthly</div><strong>Flexible</strong><small>Suitable for long-term live customers</small></div>
+      </div>
+    </div>
+
+    <div class="quote">
+      <div><span>Starter Reference</span><b>50 viewers / 1 hour / from RM3</b></div>
+      <a class="qbtn" href="https://wa.me/60137114191?text=Hi%20Fans%2C%20I%20would%20like%20to%20ask%20about%20Facebook%20Live%20viewer%20support.%0A%0ALive%20date%3A%0ALive%20time%3A%0AViewer%20quantity%3A%0ADuration%3A%0AMonthly%20package%20needed%3A%0AComment%20atmosphere%20support%20needed%3A" target="_blank" rel="noopener">Quote via WhatsApp</a>
+    </div>
+  </div></div>
+</section>
+
+<section class="lightconcept">
+  <div class="conceptinner">
+    <div><div class="kicker">More Than Viewers</div><h2>More than viewers. It is live room presence support.</h2></div>
+    <p>Fans combines viewer support, comment atmosphere support, and long-term packages into a clear Facebook Live support solution. Share your live time, viewer quantity, duration, and cooperation needs through WhatsApp to get a suitable package.</p>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="section-head">
+    <div><div class="kicker">Support Layers</div><h2>Three Support Layers for a More Complete Live Room</h2></div>
+    <p>A clearer way to present Fans: viewer presence, interaction rhythm, and long-term live support.</p>
+  </div>
+  <div class="cards">
+    <div class="card"><div class="icon">👥</div><small>VIEWER PRESENCE</small><h3>Viewer Presence</h3><p>Add a base layer of viewer support to your Facebook Live, giving the live room a stronger sense of presence.</p></div>
+    <div class="card"><div class="icon">💬</div><small>COMMENT RHYTHM</small><h3>Comment Atmosphere</h3><p>Support the interaction rhythm of the live room and help the stream feel more active and engaging.</p></div>
+    <div class="card"><div class="icon">📦</div><small>MONTHLY SUPPORT</small><h3>Monthly Support</h3><p>Suitable for regular live sellers and long-term operations that need monthly or recurring arrangements.</p></div>
+  </div>
+</section>
+
+<section class="service">
+  <div><div class="kicker">Service Package</div><h2>Facebook Live Packages by Fans</h2><p>A professional and clear service presentation, designed for custom WhatsApp consultation instead of a low-price ad page.</p></div>
+  <div class="servicegrid">
+    <div class="svc"><b>Hourly Viewer Support</b><span>Suitable for short live sessions, event streams, and one-time arrangements.</span></div>
+    <div class="svc"><b>Monthly Viewer Support</b><span>Suitable for customers who go live regularly and need ongoing support.</span></div>
+    <div class="svc"><b>Comment atmosphere support</b><span>Add more interaction feel and live presence to the streaming process.</span></div>
+  </div>
+</section>
+
+<section class="bottom">
+  <div class="box">
+    <div class="kicker">WhatsApp Brief</div>
+    <h2>Send Your Live Details on WhatsApp</h2>
+    <div class="chips">
+      <div class="chip">Live date</div>
+      <div class="chip">Live time</div>
+      <div class="chip">Viewer quantity</div>
+      <div class="chip">Duration</div>
+      <div class="chip">Monthly package</div>
+      <div class="chip">Comment support</div>
+    </div>
+  </div>
+
+  <div class="box" id="price">
+    <div class="pricebox">
+      <div>
+        <div class="kicker">Reference Price</div>
+        <h2>Facebook Live Hourly Viewer Support</h2>
+        <p>Final arrangement depends on the live date, live time, viewer quantity, duration, live frequency, and whether comment atmosphere support is needed. For monthly or long-term packages, please ask through WhatsApp.</p>
+      </div>
+      <div class="pricecard"><div>Starter from</div><div class="rm">RM3</div><b>50 viewers / 1 hour</b></div>
+    </div>
+    <a class="btn wa" style="width:100%;margin-top:28px" href="https://wa.me/60137114191?text=Hi%20Fans%2C%20I%20would%20like%20to%20ask%20about%20Facebook%20Live%20viewer%20support.%0A%0ALive%20date%3A%0ALive%20time%3A%0AViewer%20quantity%3A%0ADuration%3A%0AMonthly%20package%20needed%3A%0AComment%20atmosphere%20support%20needed%3A" target="_blank" rel="noopener">Get a Suitable Package on WhatsApp</a>
+  </div>
+</section>
+
+<section class="finalcta">
+  <div><h3>Ready to add more live presence to your next Facebook Live?</h3><p>Send your live details and Fans will help confirm a suitable package through WhatsApp.</p></div>
+  <a class="btn wa" href="https://wa.me/60137114191?text=Hi%20Fans%2C%20I%20would%20like%20to%20ask%20about%20Facebook%20Live%20viewer%20support.%0A%0ALive%20date%3A%0ALive%20time%3A%0AViewer%20quantity%3A%0ADuration%3A%0AMonthly%20package%20needed%3A%0AComment%20atmosphere%20support%20needed%3A" target="_blank" rel="noopener">Ask Now</a>
+</section>
+
+<div class="footer">Fans｜Facebook Live Support</div>
+</div>
+</body>
+</html>
