@@ -3690,6 +3690,99 @@ img, svg, video, canvas{
   .finalcta.v615-finalcta h3{font-size:24px}
 }
 
+  /* =========================================================
+   V6.17 Dashboard No-WhatsApp Compact Patch
+   用途：
+   1. 去除首屏右侧 Dashboard 内部 WhatsApp 按钮
+   2. 去除按钮消失后留下的空白高度
+   3. 让标签按钮和左右箭头自然上移
+   只影响首屏 Dashboard，不影响其它 WhatsApp CTA
+========================================================= */
+
+/* 隐藏 Dashboard 内部 WhatsApp CTA */
+.hero-dashboard a[href*="wa.me"],
+.hero-dashboard a[href*="whatsapp"],
+.hero-visual a[href*="wa.me"],
+.hero-visual a[href*="whatsapp"],
+.dashboard-shell a[href*="wa.me"],
+.dashboard-shell a[href*="whatsapp"],
+.preview-dashboard a[href*="wa.me"],
+.preview-dashboard a[href*="whatsapp"] {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  max-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
+}
+
+/* 电脑版：按钮去除后，收紧右侧 Dashboard 主卡片高度 */
+@media (min-width: 769px) {
+  .hero-dashboard [class*="slide"],
+  .hero-dashboard [class*="card"],
+  .hero-dashboard [class*="panel"],
+  .hero-visual [class*="slide"],
+  .hero-visual [class*="card"],
+  .hero-visual [class*="panel"],
+  .dashboard-shell [class*="slide"],
+  .dashboard-shell [class*="card"],
+  .dashboard-shell [class*="panel"],
+  .preview-dashboard [class*="slide"],
+  .preview-dashboard [class*="card"],
+  .preview-dashboard [class*="panel"] {
+    min-height: auto !important;
+  }
+
+  .hero-dashboard,
+  .hero-visual,
+  .dashboard-shell,
+  .preview-dashboard {
+    height: auto !important;
+  }
+
+  .hero-dashboard [class*="tabs"],
+  .hero-visual [class*="tabs"],
+  .dashboard-shell [class*="tabs"],
+  .preview-dashboard [class*="tabs"] {
+    margin-top: 18px !important;
+  }
+
+  .hero-dashboard [class*="nav"],
+  .hero-dashboard [class*="arrow"],
+  .hero-visual [class*="nav"],
+  .hero-visual [class*="arrow"],
+  .dashboard-shell [class*="nav"],
+  .dashboard-shell [class*="arrow"],
+  .preview-dashboard [class*="nav"],
+  .preview-dashboard [class*="arrow"] {
+    margin-top: 12px !important;
+  }
+}
+
+/* 手机端：保持稳定，只去掉按钮空位，不强行压缩太多 */
+@media (max-width: 768px) {
+  .hero-dashboard [class*="tabs"],
+  .hero-visual [class*="tabs"],
+  .dashboard-shell [class*="tabs"],
+  .preview-dashboard [class*="tabs"] {
+    margin-top: 14px !important;
+  }
+
+  .hero-dashboard [class*="nav"],
+  .hero-dashboard [class*="arrow"],
+  .hero-visual [class*="nav"],
+  .hero-visual [class*="arrow"],
+  .dashboard-shell [class*="nav"],
+  .dashboard-shell [class*="arrow"],
+  .preview-dashboard [class*="nav"],
+  .preview-dashboard [class*="arrow"] {
+    margin-top: 10px !important;
+  }
+}
+
 </style>
 <link rel="stylesheet" href="./v6.16-complete-copy-paste.css?v=617">
 </head>
