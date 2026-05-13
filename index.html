@@ -1826,10 +1826,312 @@ img, svg, video, canvas{
   }
 }
 
+
+/* V6.9 Support Layers system flow version only */
+#services.section{
+  padding-top:10px;
+}
+
+#services .sectionhead{
+  align-items:flex-end;
+  gap:44px;
+  margin-bottom:28px;
+}
+
+#services .sectionhead h2{
+  max-width:760px;
+  line-height:1.1;
+  letter-spacing:-.048em;
+}
+
+#services .sectionhead p{
+  max-width:500px;
+  font-size:17px;
+  line-height:1.7;
+  color:#64748b;
+}
+
+.layerSystem{
+  position:relative;
+  overflow:hidden;
+  border-radius:42px;
+  border:1px solid rgba(226,232,240,.88);
+  background:
+    radial-gradient(circle at 92% 0%,rgba(196,181,253,.22) 0 78px,transparent 79px),
+    radial-gradient(circle at 0% 100%,rgba(191,219,254,.18) 0 92px,transparent 93px),
+    rgba(255,255,255,.92);
+  box-shadow:0 28px 78px rgba(91,77,255,.075);
+  padding:32px;
+}
+
+.layerSystem:before{
+  content:"";
+  position:absolute;
+  left:36px;
+  right:36px;
+  top:110px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(91,77,255,.30),rgba(37,99,235,.22),transparent);
+}
+
+.layerSystemTop{
+  position:relative;
+  z-index:2;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  margin-bottom:30px;
+}
+
+.layerSystemTop .miniTitle{
+  color:#5b4dff;
+  font-size:13px;
+  font-weight:950;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.layerSystemTop .miniHint{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:#f5f3ff;
+  border:1px solid rgba(226,232,240,.9);
+  color:#64748b;
+  font-size:13px;
+  font-weight:850;
+}
+
+.layerSystemTop .miniHint:before{
+  content:"";
+  width:7px;
+  height:7px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#6d28d9,#2563eb);
+}
+
+.layerFlow{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.layerStep{
+  position:relative;
+  min-height:280px;
+  border-radius:30px;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.92),rgba(255,255,255,.78));
+  border:1px solid rgba(226,232,240,.86);
+  padding:26px 26px 24px;
+  box-shadow:0 16px 44px rgba(91,77,255,.045);
+}
+
+.layerStep:before{
+  content:attr(data-step);
+  position:absolute;
+  right:20px;
+  top:18px;
+  width:56px;
+  height:56px;
+  border-radius:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,rgba(109,40,217,.11),rgba(37,99,235,.08));
+  color:rgba(91,77,255,.42);
+  font-size:23px;
+  font-weight:950;
+  letter-spacing:-.03em;
+  border:1px solid rgba(226,232,240,.86);
+}
+
+.layerStep:after{
+  content:"";
+  position:absolute;
+  right:-22px;
+  top:86px;
+  width:26px;
+  height:10px;
+  border-radius:999px;
+  background:linear-gradient(90deg,rgba(91,77,255,.22),rgba(37,99,235,.14));
+}
+
+.layerStep:last-child:after{
+  display:none;
+}
+
+.layerStep .layerDot{
+  width:18px;
+  height:18px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#6d28d9,#2563eb);
+  box-shadow:0 0 0 9px rgba(91,77,255,.08);
+  margin-bottom:28px;
+}
+
+.layerStep .kicker{
+  font-size:12px;
+  letter-spacing:.18em;
+  margin-bottom:14px;
+}
+
+.layerStep h3{
+  font-size:29px;
+  line-height:1.12;
+  letter-spacing:-.042em;
+  margin:0 0 14px;
+}
+
+.layerStep p{
+  font-size:16px;
+  line-height:1.68;
+  color:#64748b;
+  margin:0;
+  max-width:92%;
+}
+
+.layerUse{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:24px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(245,243,255,.92);
+  border:1px solid rgba(226,232,240,.9);
+  color:#5b4dff;
+  font-size:12.5px;
+  font-weight:900;
+}
+
+.layerUse:before{
+  content:"";
+  width:6px;
+  height:6px;
+  border-radius:999px;
+  background:#5b4dff;
+}
+
+@media(max-width:980px){
+  #services.section{
+    padding-top:2px;
+  }
+
+  #services .sectionhead{
+    gap:14px;
+    margin-bottom:22px;
+  }
+
+  #services .sectionhead h2{
+    line-height:1.13;
+  }
+
+  #services .sectionhead p{
+    font-size:15px;
+    line-height:1.58;
+  }
+
+  .layerSystem{
+    border-radius:32px;
+    padding:18px;
+  }
+
+  .layerSystem:before{
+    left:43px;
+    right:auto;
+    top:84px;
+    bottom:48px;
+    width:1px;
+    height:auto;
+    background:linear-gradient(180deg,rgba(91,77,255,.24),rgba(37,99,235,.13),transparent);
+  }
+
+  .layerSystemTop{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:18px;
+  }
+
+  .layerSystemTop .miniTitle{
+    font-size:11.5px;
+    letter-spacing:.16em;
+  }
+
+  .layerSystemTop .miniHint{
+    font-size:12px;
+    padding:7px 10px;
+  }
+
+  .layerFlow{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+
+  .layerStep{
+    min-height:auto;
+    border-radius:26px;
+    padding:22px 20px 22px 58px;
+  }
+
+  .layerStep:before{
+    left:18px;
+    right:auto;
+    top:22px;
+    width:34px;
+    height:34px;
+    border-radius:13px;
+    font-size:15px;
+  }
+
+  .layerStep:after{
+    display:none;
+  }
+
+  .layerStep .layerDot{
+    position:absolute;
+    left:33px;
+    top:74px;
+    width:10px;
+    height:10px;
+    box-shadow:0 0 0 7px rgba(91,77,255,.07);
+    margin:0;
+  }
+
+  .layerStep .kicker{
+    font-size:11px;
+    margin-bottom:10px;
+  }
+
+  .layerStep h3{
+    font-size:23px;
+    line-height:1.15;
+    margin-bottom:10px;
+  }
+
+  .layerStep p{
+    font-size:14.5px;
+    line-height:1.58;
+    max-width:100%;
+  }
+
+  .layerUse{
+    margin-top:15px;
+    font-size:12px;
+    padding:7px 10px;
+  }
+}
+
 </style>
 </head>
 <body>
-<!-- v6.8-support-layers-refined -->
+<!-- v6.9-support-layers-system-flow -->
 <div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 <div class="wrap">
 <header class="nav">
@@ -1932,29 +2234,36 @@ img, svg, video, canvas{
       <div class="kicker">Support Layers</div>
       <h2>三层直播支持，让直播间更完整</h2>
     </div>
-    <p>用更清楚的方式说明 Fans 的价值：观看氛围、评论节奏与长期安排。</p>
+    <p>从观看氛围、评论节奏到长期配套，清楚说明 Fans 如何帮助直播间形成更完整的现场感。</p>
   </div>
-  <div class="cards">
-    <div class="servicecard" data-layer="01">
-      <div class="ico" aria-hidden="true"></div>
-      <div class="kicker">VIEWER PRESENCE</div>
-      <h3>基础观看氛围</h3>
-      <p>为 Facebook Live 增加基础观看人数支持，让直播间呈现更稳定的现场感。</p>
-      <div class="layernote">适合短期开播</div>
+
+  <div class="layerSystem">
+    <div class="layerSystemTop">
+      <div class="miniTitle">Fans Support Flow</div>
+      <div class="miniHint">从基础到长期安排</div>
     </div>
-    <div class="servicecard" data-layer="02">
-      <div class="ico" aria-hidden="true"></div>
-      <div class="kicker">COMMENT RHYTHM</div>
-      <h3>评论互动气氛</h3>
-      <p>协助直播间保持互动节奏，让直播过程更有气氛、更容易带动现场感。</p>
-      <div class="layernote">适合互动带动</div>
-    </div>
-    <div class="servicecard" data-layer="03">
-      <div class="ico" aria-hidden="true"></div>
-      <div class="kicker">MONTHLY SUPPORT</div>
-      <h3>长期直播配套</h3>
-      <p>适合经常直播、需要包月或长期安排的客户，根据直播频率灵活定制。</p>
-      <div class="layernote">适合长期直播</div>
+    <div class="layerFlow">
+      <article class="layerStep" data-step="01">
+        <div class="layerDot" aria-hidden="true"></div>
+        <div class="kicker">VIEWER PRESENCE</div>
+        <h3>观看氛围</h3>
+        <p>让直播间先有基础观看支持，开播时看起来更稳定、更有现场感。</p>
+        <div class="layerUse">基础人气</div>
+      </article>
+      <article class="layerStep" data-step="02">
+        <div class="layerDot" aria-hidden="true"></div>
+        <div class="kicker">COMMENT RHYTHM</div>
+        <h3>评论节奏</h3>
+        <p>配合直播内容带动评论互动，让直播过程更自然、更容易形成气氛。</p>
+        <div class="layerUse">互动带动</div>
+      </article>
+      <article class="layerStep" data-step="03">
+        <div class="layerDot" aria-hidden="true"></div>
+        <div class="kicker">MONTHLY SUPPORT</div>
+        <h3>长期配套</h3>
+        <p>适合经常直播、固定开播或需要持续安排的客户，按需求组合配套。</p>
+        <div class="layerUse">长期安排</div>
+      </article>
     </div>
   </div>
 </section>

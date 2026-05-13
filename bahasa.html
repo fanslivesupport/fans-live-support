@@ -1826,10 +1826,312 @@ img, svg, video, canvas{
   }
 }
 
+
+/* V6.9 Support Layers system flow version only */
+#services.section{
+  padding-top:10px;
+}
+
+#services .sectionhead{
+  align-items:flex-end;
+  gap:44px;
+  margin-bottom:28px;
+}
+
+#services .sectionhead h2{
+  max-width:760px;
+  line-height:1.1;
+  letter-spacing:-.048em;
+}
+
+#services .sectionhead p{
+  max-width:500px;
+  font-size:17px;
+  line-height:1.7;
+  color:#64748b;
+}
+
+.layerSystem{
+  position:relative;
+  overflow:hidden;
+  border-radius:42px;
+  border:1px solid rgba(226,232,240,.88);
+  background:
+    radial-gradient(circle at 92% 0%,rgba(196,181,253,.22) 0 78px,transparent 79px),
+    radial-gradient(circle at 0% 100%,rgba(191,219,254,.18) 0 92px,transparent 93px),
+    rgba(255,255,255,.92);
+  box-shadow:0 28px 78px rgba(91,77,255,.075);
+  padding:32px;
+}
+
+.layerSystem:before{
+  content:"";
+  position:absolute;
+  left:36px;
+  right:36px;
+  top:110px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(91,77,255,.30),rgba(37,99,235,.22),transparent);
+}
+
+.layerSystemTop{
+  position:relative;
+  z-index:2;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+  margin-bottom:30px;
+}
+
+.layerSystemTop .miniTitle{
+  color:#5b4dff;
+  font-size:13px;
+  font-weight:950;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+.layerSystemTop .miniHint{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:#f5f3ff;
+  border:1px solid rgba(226,232,240,.9);
+  color:#64748b;
+  font-size:13px;
+  font-weight:850;
+}
+
+.layerSystemTop .miniHint:before{
+  content:"";
+  width:7px;
+  height:7px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#6d28d9,#2563eb);
+}
+
+.layerFlow{
+  position:relative;
+  z-index:2;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.layerStep{
+  position:relative;
+  min-height:280px;
+  border-radius:30px;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.92),rgba(255,255,255,.78));
+  border:1px solid rgba(226,232,240,.86);
+  padding:26px 26px 24px;
+  box-shadow:0 16px 44px rgba(91,77,255,.045);
+}
+
+.layerStep:before{
+  content:attr(data-step);
+  position:absolute;
+  right:20px;
+  top:18px;
+  width:56px;
+  height:56px;
+  border-radius:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,rgba(109,40,217,.11),rgba(37,99,235,.08));
+  color:rgba(91,77,255,.42);
+  font-size:23px;
+  font-weight:950;
+  letter-spacing:-.03em;
+  border:1px solid rgba(226,232,240,.86);
+}
+
+.layerStep:after{
+  content:"";
+  position:absolute;
+  right:-22px;
+  top:86px;
+  width:26px;
+  height:10px;
+  border-radius:999px;
+  background:linear-gradient(90deg,rgba(91,77,255,.22),rgba(37,99,235,.14));
+}
+
+.layerStep:last-child:after{
+  display:none;
+}
+
+.layerStep .layerDot{
+  width:18px;
+  height:18px;
+  border-radius:999px;
+  background:linear-gradient(135deg,#6d28d9,#2563eb);
+  box-shadow:0 0 0 9px rgba(91,77,255,.08);
+  margin-bottom:28px;
+}
+
+.layerStep .kicker{
+  font-size:12px;
+  letter-spacing:.18em;
+  margin-bottom:14px;
+}
+
+.layerStep h3{
+  font-size:29px;
+  line-height:1.12;
+  letter-spacing:-.042em;
+  margin:0 0 14px;
+}
+
+.layerStep p{
+  font-size:16px;
+  line-height:1.68;
+  color:#64748b;
+  margin:0;
+  max-width:92%;
+}
+
+.layerUse{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  margin-top:24px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(245,243,255,.92);
+  border:1px solid rgba(226,232,240,.9);
+  color:#5b4dff;
+  font-size:12.5px;
+  font-weight:900;
+}
+
+.layerUse:before{
+  content:"";
+  width:6px;
+  height:6px;
+  border-radius:999px;
+  background:#5b4dff;
+}
+
+@media(max-width:980px){
+  #services.section{
+    padding-top:2px;
+  }
+
+  #services .sectionhead{
+    gap:14px;
+    margin-bottom:22px;
+  }
+
+  #services .sectionhead h2{
+    line-height:1.13;
+  }
+
+  #services .sectionhead p{
+    font-size:15px;
+    line-height:1.58;
+  }
+
+  .layerSystem{
+    border-radius:32px;
+    padding:18px;
+  }
+
+  .layerSystem:before{
+    left:43px;
+    right:auto;
+    top:84px;
+    bottom:48px;
+    width:1px;
+    height:auto;
+    background:linear-gradient(180deg,rgba(91,77,255,.24),rgba(37,99,235,.13),transparent);
+  }
+
+  .layerSystemTop{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:18px;
+  }
+
+  .layerSystemTop .miniTitle{
+    font-size:11.5px;
+    letter-spacing:.16em;
+  }
+
+  .layerSystemTop .miniHint{
+    font-size:12px;
+    padding:7px 10px;
+  }
+
+  .layerFlow{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+
+  .layerStep{
+    min-height:auto;
+    border-radius:26px;
+    padding:22px 20px 22px 58px;
+  }
+
+  .layerStep:before{
+    left:18px;
+    right:auto;
+    top:22px;
+    width:34px;
+    height:34px;
+    border-radius:13px;
+    font-size:15px;
+  }
+
+  .layerStep:after{
+    display:none;
+  }
+
+  .layerStep .layerDot{
+    position:absolute;
+    left:33px;
+    top:74px;
+    width:10px;
+    height:10px;
+    box-shadow:0 0 0 7px rgba(91,77,255,.07);
+    margin:0;
+  }
+
+  .layerStep .kicker{
+    font-size:11px;
+    margin-bottom:10px;
+  }
+
+  .layerStep h3{
+    font-size:23px;
+    line-height:1.15;
+    margin-bottom:10px;
+  }
+
+  .layerStep p{
+    font-size:14.5px;
+    line-height:1.58;
+    max-width:100%;
+  }
+
+  .layerUse{
+    margin-top:15px;
+    font-size:12px;
+    padding:7px 10px;
+  }
+}
+
 </style>
 </head>
 <body>
-<!-- v6.8-support-layers-refined -->
+<!-- v6.9-support-layers-system-flow -->
 <div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 <div class="wrap">
 <header class="nav">
@@ -1930,31 +2232,38 @@ img, svg, video, canvas{
   <div class="sectionhead">
     <div>
       <div class="kicker">Support Layers</div>
-      <h2>Tiga Sokongan untuk Live Room yang Lebih Lengkap</h2>
+      <h2>Tiga Lapisan Sokongan untuk Live Room yang Lebih Lengkap</h2>
     </div>
-    <p>Cara yang lebih jelas untuk menerangkan nilai Fans: suasana penonton, rentak interaksi dan sokongan live jangka panjang.</p>
+    <p>Daripada suasana penonton, rentak komen hingga sokongan jangka panjang, Fans membantu live room nampak lebih jelas dan aktif.</p>
   </div>
-  <div class="cards">
-    <div class="servicecard" data-layer="01">
-      <div class="ico" aria-hidden="true"></div>
-      <div class="kicker">VIEWER PRESENCE</div>
-      <h3>Suasana Penonton</h3>
-      <p>Tambah sokongan penonton asas untuk Facebook Live supaya live room kelihatan lebih stabil dan aktif.</p>
-      <div class="layernote">Live pendek</div>
+
+  <div class="layerSystem">
+    <div class="layerSystemTop">
+      <div class="miniTitle">Fans Support Flow</div>
+      <div class="miniHint">Dari sokongan asas ke susunan jangka panjang</div>
     </div>
-    <div class="servicecard" data-layer="02">
-      <div class="ico" aria-hidden="true"></div>
-      <div class="kicker">COMMENT RHYTHM</div>
-      <h3>Suasana Komen</h3>
-      <p>Membantu mengekalkan rentak interaksi supaya proses live terasa lebih aktif dan ada suasana.</p>
-      <div class="layernote">Interaksi komen</div>
-    </div>
-    <div class="servicecard" data-layer="03">
-      <div class="ico" aria-hidden="true"></div>
-      <div class="kicker">MONTHLY SUPPORT</div>
-      <h3>Sokongan Bulanan</h3>
-      <p>Sesuai untuk pelanggan yang kerap live dan perlukan susunan bulanan atau jangka panjang.</p>
-      <div class="layernote">Live berkala</div>
+    <div class="layerFlow">
+      <article class="layerStep" data-step="01">
+        <div class="layerDot" aria-hidden="true"></div>
+        <div class="kicker">VIEWER PRESENCE</div>
+        <h3>Suasana Penonton</h3>
+        <p>Bina asas sokongan penonton supaya Facebook Live kelihatan lebih stabil dan ada suasana.</p>
+        <div class="layerUse">Asas penonton</div>
+      </article>
+      <article class="layerStep" data-step="02">
+        <div class="layerDot" aria-hidden="true"></div>
+        <div class="kicker">COMMENT RHYTHM</div>
+        <h3>Rentak Komen</h3>
+        <p>Bantu rentak komen semasa live supaya interaksi nampak lebih aktif dan semula jadi.</p>
+        <div class="layerUse">Interaksi aktif</div>
+      </article>
+      <article class="layerStep" data-step="03">
+        <div class="layerDot" aria-hidden="true"></div>
+        <div class="kicker">MONTHLY SUPPORT</div>
+        <h3>Sokongan Bulanan</h3>
+        <p>Untuk pelanggan yang kerap live, ada jadual tetap atau perlukan susunan jangka panjang.</p>
+        <div class="layerUse">Susunan tetap</div>
+      </article>
     </div>
   </div>
 </section>
