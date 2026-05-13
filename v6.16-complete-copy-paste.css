@@ -199,3 +199,102 @@
     margin-top: 8px;
   }
 }
+
+/* =========================================================
+   V6.17 Dashboard No-WhatsApp Closing
+   去除 Dashboard WhatsApp 按钮后的高度收口
+   只影响首屏右侧 Dashboard，不影响首屏左侧、价格区和底部 CTA
+========================================================= */
+
+/* 1. 确保 Dashboard 内部的 WhatsApp CTA 不占位 */
+.hero-dashboard a[href*="wa.me"],
+.hero-dashboard a[href*="whatsapp"],
+.hero-dashboard .dashboard-cta,
+.hero-dashboard .slide-cta,
+.hero-dashboard .card-cta,
+.hero-dashboard .support-cta,
+.dashboard-shell a[href*="wa.me"],
+.dashboard-shell a[href*="whatsapp"],
+.dashboard-shell .dashboard-cta,
+.dashboard-shell .slide-cta,
+.dashboard-shell .card-cta,
+.dashboard-shell .support-cta {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+/* 2. 桌面端：收短 Dashboard 主内容卡片，减少按钮消失后的空白 */
+@media (min-width: 769px) {
+  .hero-dashboard .dashboard-card,
+  .hero-dashboard .dashboard-slide,
+  .hero-dashboard .preview-card,
+  .hero-dashboard .service-preview,
+  .hero-dashboard .service-card,
+  .dashboard-shell .dashboard-card,
+  .dashboard-shell .dashboard-slide,
+  .dashboard-shell .preview-card,
+  .dashboard-shell .service-preview,
+  .dashboard-shell .service-card {
+    min-height: 360px !important;
+    height: auto !important;
+    padding-bottom: 34px !important;
+  }
+
+  .hero-dashboard .dashboard-content,
+  .hero-dashboard .dashboard-body,
+  .hero-dashboard .slide-content,
+  .hero-dashboard .preview-content,
+  .dashboard-shell .dashboard-content,
+  .dashboard-shell .dashboard-body,
+  .dashboard-shell .slide-content,
+  .dashboard-shell .preview-content {
+    gap: 22px !important;
+    row-gap: 22px !important;
+  }
+
+  .hero-dashboard .dashboard-tabs,
+  .hero-dashboard .service-tabs,
+  .hero-dashboard .preview-tabs,
+  .dashboard-shell .dashboard-tabs,
+  .dashboard-shell .service-tabs,
+  .dashboard-shell .preview-tabs {
+    margin-top: 18px !important;
+  }
+
+  .hero-dashboard .dashboard-arrows,
+  .hero-dashboard .carousel-arrows,
+  .dashboard-shell .dashboard-arrows,
+  .dashboard-shell .carousel-arrows {
+    margin-top: 14px !important;
+  }
+}
+
+/* 3. 手机端：只轻微收口，不破坏现在已经稳定的手机版 */
+@media (max-width: 768px) {
+  .hero-dashboard .dashboard-card,
+  .hero-dashboard .dashboard-slide,
+  .hero-dashboard .preview-card,
+  .hero-dashboard .service-preview,
+  .hero-dashboard .service-card,
+  .dashboard-shell .dashboard-card,
+  .dashboard-shell .dashboard-slide,
+  .dashboard-shell .preview-card,
+  .dashboard-shell .service-preview,
+  .dashboard-shell .service-card {
+    min-height: auto !important;
+    padding-bottom: 26px !important;
+  }
+
+  .hero-dashboard .dashboard-tabs,
+  .hero-dashboard .service-tabs,
+  .hero-dashboard .preview-tabs,
+  .dashboard-shell .dashboard-tabs,
+  .dashboard-shell .service-tabs,
+  .dashboard-shell .preview-tabs {
+    margin-top: 16px !important;
+  }
+}
