@@ -1436,10 +1436,108 @@ img, svg, video, canvas{
   }
 }
 
+
+/* V6.6 mobile-only second-screen brand card tightening */
+@media(max-width:980px){
+  /* Keep the desktop value card unchanged; only make mobile calmer */
+  .lightconcept{
+    padding:14px;
+    border-radius:30px;
+    margin:0 0 48px;
+    box-shadow:0 22px 54px rgba(91,77,255,.07);
+  }
+
+  .conceptinner{
+    padding:23px 20px 24px;
+    border-radius:26px;
+    background:
+      radial-gradient(circle at 88% 12%,rgba(196,181,253,.20) 0 28px,transparent 29px),
+      linear-gradient(135deg,#f7f5ff 0%,#fbfdff 100%);
+  }
+
+  /* Change the strong mobile top line into a short, quiet accent */
+  .conceptinner:before{
+    top:22px;
+    left:20px;
+    right:auto;
+    width:86px;
+    height:3px;
+    opacity:.58;
+    border-radius:999px;
+  }
+
+  .lightconcept .kicker{
+    font-size:11px;
+    letter-spacing:.18em;
+    margin-top:8px;
+  }
+
+  .lightconcept h2{
+    font-size:25px;
+    line-height:1.18;
+    letter-spacing:-.035em;
+    margin-top:12px;
+  }
+
+  .conceptchips{
+    margin-top:16px;
+    gap:8px;
+  }
+
+  .conceptchips span{
+    font-size:12px;
+    padding:7px 10px;
+    box-shadow:0 8px 18px rgba(90,90,150,.045);
+  }
+
+  .concepttext p{
+    font-size:15px;
+    line-height:1.62;
+  }
+
+  .conceptmini{
+    margin-top:16px;
+    font-size:12.5px;
+    color:rgba(91,77,255,.84);
+  }
+}
+
+@media(max-width:430px){
+  .lightconcept{
+    padding:12px;
+    border-radius:28px;
+    margin-bottom:44px;
+  }
+
+  .conceptinner{
+    padding:22px 18px 22px;
+    border-radius:24px;
+  }
+
+  .conceptinner:before{
+    left:18px;
+    width:78px;
+    opacity:.52;
+  }
+
+  .lightconcept h2{
+    font-size:24px;
+  }
+
+  .concepttext p{
+    font-size:14.5px;
+    line-height:1.58;
+  }
+
+  .conceptmini{
+    font-size:12px;
+  }
+}
+
 </style>
 </head>
 <body>
-<!-- v6.5-brand-value-card -->
+<!-- v6.6-mobile-second-card-tight -->
 <div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 <div class="wrap">
 <header class="nav">
