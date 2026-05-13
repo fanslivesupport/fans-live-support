@@ -2791,10 +2791,376 @@ img, svg, video, canvas{
   }
 }
 
+
+/* V6.12 WhatsApp Quote & Reference Price upgrade */
+/* Only upgrades the WhatsApp Brief + Reference Price section. Other sections remain unchanged. */
+
+.quoteV612{
+  margin-top:78px;
+  scroll-margin-top:92px;
+}
+
+.quoteV612Shell{
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:minmax(0,.94fr) 72px minmax(0,1.06fr);
+  gap:24px;
+  align-items:stretch;
+  padding:42px;
+  border:1px solid rgba(238,242,255,.98);
+  border-radius:46px;
+  background:
+    radial-gradient(circle at 100% 0%,rgba(196,181,253,.22) 0 112px,transparent 113px),
+    radial-gradient(circle at 0% 100%,rgba(191,219,254,.14) 0 124px,transparent 125px),
+    rgba(255,255,255,.94);
+  box-shadow:0 26px 72px rgba(90,90,150,.095);
+}
+
+.quoteV612Shell:before{
+  content:"";
+  position:absolute;
+  inset:18px;
+  border:1px solid rgba(226,232,240,.76);
+  border-radius:36px;
+  pointer-events:none;
+}
+
+.quotePanel{
+  position:relative;
+  z-index:1;
+}
+
+.quoteBrief,
+.quotePrice{
+  min-height:356px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.quoteBrief h2,
+.quotePrice h2{
+  margin:12px 0 0;
+  color:#0f172a;
+  font-size:40px;
+  line-height:1.12;
+  letter-spacing:-.045em;
+}
+
+.quoteBrief h2 span{
+  color:#5b4dff;
+}
+
+.quoteBrief p,
+.quotePrice p{
+  max-width:500px;
+  margin:22px 0 0;
+  color:#64748b;
+  font-size:17px;
+  font-weight:690;
+  line-height:1.68;
+}
+
+.quoteChecklist{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:28px;
+}
+
+.quoteItem{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-height:54px;
+  padding:12px 14px;
+  border:1px solid rgba(226,232,240,.95);
+  border-radius:18px;
+  background:rgba(248,250,252,.82);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.85);
+}
+
+.quoteItem i{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:28px;
+  height:28px;
+  flex:0 0 28px;
+  border-radius:999px;
+  background:rgba(91,77,255,.10);
+  color:#5b4dff;
+  font-style:normal;
+  font-size:10.5px;
+  font-weight:950;
+}
+
+.quoteItem span{
+  color:#475569;
+  font-size:14.5px;
+  font-weight:900;
+  line-height:1.2;
+}
+
+.quoteNote{
+  display:inline-flex;
+  align-items:center;
+  width:max-content;
+  max-width:100%;
+  margin-top:20px;
+  padding:8px 12px;
+  border:1px solid rgba(226,232,240,.95);
+  border-radius:999px;
+  background:rgba(255,255,255,.82);
+  color:#64748b;
+  font-size:13px;
+  font-weight:900;
+  line-height:1.25;
+}
+
+.quoteNote:before{
+  content:"";
+  width:7px;
+  height:7px;
+  margin-right:8px;
+  border-radius:50%;
+  background:#6257ff;
+  box-shadow:0 0 0 5px rgba(98,87,255,.09);
+}
+
+.quoteBridge{
+  position:relative;
+  z-index:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  color:#5b4dff;
+  font-size:10px;
+  font-weight:950;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+.quoteBridge span{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:56px;
+  min-height:34px;
+  padding:0 8px;
+  border:1px solid rgba(226,232,240,.95);
+  border-radius:999px;
+  background:rgba(255,255,255,.86);
+  box-shadow:0 12px 28px rgba(91,77,255,.055);
+  text-align:center;
+}
+
+.quoteBridge i{
+  display:block;
+  width:1px;
+  height:42px;
+  background:linear-gradient(180deg,rgba(98,87,255,.12),rgba(98,87,255,.45),rgba(37,99,235,.12));
+}
+
+.quotePriceTop{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) 194px;
+  gap:24px;
+  align-items:center;
+}
+
+.quotePriceCard{
+  position:relative;
+  overflow:hidden;
+  min-height:214px;
+  padding:26px 24px;
+  border-radius:34px;
+  color:white;
+  background:
+    radial-gradient(circle at 100% 0%,rgba(255,255,255,.16) 0 58px,transparent 59px),
+    linear-gradient(145deg,#6d28d9 0%,#2563eb 100%);
+  box-shadow:0 22px 54px rgba(91,77,255,.25);
+}
+
+.quotePriceCard div{
+  position:relative;
+  z-index:1;
+  font-size:14px;
+  font-weight:700;
+  opacity:.96;
+}
+
+.quotePriceCard strong{
+  position:relative;
+  z-index:1;
+  display:block;
+  margin-top:6px;
+  font-size:62px;
+  line-height:.95;
+  letter-spacing:-.055em;
+}
+
+.quotePriceCard b{
+  position:relative;
+  z-index:1;
+  display:block;
+  margin-top:8px;
+  font-size:15px;
+  line-height:1.25;
+}
+
+.quoteCta{
+  width:100%;
+  justify-content:center;
+  margin-top:24px;
+  border-radius:18px;
+}
+
+@media(max-width:980px){
+  .quoteV612{
+    margin-top:58px;
+  }
+
+  .quoteV612Shell{
+    grid-template-columns:1fr;
+    gap:18px;
+    padding:28px 22px;
+    border-radius:34px;
+  }
+
+  .quoteV612Shell:before{
+    inset:12px;
+    border-radius:26px;
+  }
+
+  .quoteBridge{
+    display:none;
+  }
+
+  .quoteBrief,
+  .quotePrice{
+    min-height:auto;
+    justify-content:flex-start;
+  }
+
+  .quoteBrief h2,
+  .quotePrice h2{
+    font-size:29px;
+    line-height:1.12;
+  }
+
+  .quoteBrief p,
+  .quotePrice p{
+    margin-top:14px;
+    font-size:15px;
+    line-height:1.5;
+  }
+
+  .quoteChecklist{
+    gap:10px;
+    margin-top:18px;
+  }
+
+  .quoteItem{
+    min-height:48px;
+    padding:10px 11px;
+    border-radius:16px;
+  }
+
+  .quoteItem i{
+    width:25px;
+    height:25px;
+    flex-basis:25px;
+    font-size:9.5px;
+  }
+
+  .quoteItem span{
+    font-size:13.4px;
+  }
+
+  .quoteNote{
+    width:100%;
+    margin-top:14px;
+    font-size:12px;
+    padding:8px 11px;
+  }
+
+  .quotePrice{
+    padding-top:2px;
+  }
+
+  .quotePriceTop{
+    grid-template-columns:1fr;
+    gap:14px;
+  }
+
+  .quotePriceCard{
+    min-height:auto;
+    padding:20px 22px;
+    border-radius:26px;
+  }
+
+  .quotePriceCard strong{
+    font-size:54px;
+  }
+
+  .quoteCta{
+    margin-top:16px;
+  }
+}
+
+@media(max-width:430px){
+  .quoteV612Shell{
+    padding:24px 16px;
+    border-radius:30px;
+  }
+
+  .quoteV612Shell:before{
+    inset:10px;
+    border-radius:24px;
+  }
+
+  .quoteBrief h2,
+  .quotePrice h2{
+    font-size:26px;
+  }
+
+  .quoteBrief p,
+  .quotePrice p{
+    font-size:14px;
+    line-height:1.46;
+  }
+
+  .quoteChecklist{
+    grid-template-columns:1fr;
+    gap:8px;
+  }
+
+  .quoteItem{
+    min-height:44px;
+    padding:9px 10px;
+  }
+
+  .quoteItem span{
+    font-size:13px;
+  }
+
+  .quotePriceCard strong{
+    font-size:48px;
+  }
+
+  .quotePriceCard b{
+    font-size:13.5px;
+  }
+}
+
 </style>
 </head>
 <body>
-<!-- v6.11.1-service-package-mobile-tight -->
+<!-- v6.12-quote-reference-price-upgrade -->
 <div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 <div class="wrap">
 <header class="nav">
@@ -2958,16 +3324,50 @@ img, svg, video, canvas{
     </div>
   </div>
 </section>
-<section class="bottom">
-  <div class="box"><div class="kicker">WhatsApp Brief</div><h2>Hantar Maklumat Live Melalui WhatsApp</h2><div class="chips">
-      <div class="chip">Tarikh live</div>
-      <div class="chip">Masa live</div>
-      <div class="chip">Jumlah penonton</div>
-      <div class="chip">Tempoh live</div>
-      <div class="chip">Pakej bulanan</div>
-      <div class="chip">Sokongan komen</div>
-  </div></div>
-  <div class="box" id="price"><div class="pricebox"><div><div class="kicker">Reference Price</div><h2>Sokongan Penonton Facebook Live Ikut Jam</h2><p>Susunan akhir bergantung pada tarikh live, masa live, jumlah penonton, tempoh live, kekerapan live dan sama ada sokongan suasana komen diperlukan. Untuk pakej bulanan atau kerjasama jangka panjang, sila tanya melalui WhatsApp.</p></div><div class="pricecard"><div>Starter from</div><div class="rm">RM3</div><b>50 penonton / 1 jam</b></div></div><a class="btn wa" style="width:100%;margin-top:28px" href="https://wa.me/60137114191?text=Hi%20Fans%2C%20saya%20ingin%20tanya%20tentang%20sokongan%20Facebook%20Live.%0A%0ATarikh%20live%3A%0AMasa%20live%3A%0AJumlah%20penonton%3A%0ATempoh%20live%3A%0APerlu%20pakej%20bulanan%3A%0APerlu%20sokongan%20suasana%20komen%3A" target="_blank" rel="noopener">Dapatkan Pakej Sesuai di WhatsApp</a></div>
+<section class="quoteV612" id="price">
+  <div class="quoteV612Shell">
+    <div class="quotePanel quoteBrief">
+      <div class="kicker">WhatsApp Quote</div>
+      <h2>Hantar Maklumat Live<br><span>Dapatkan Pakej Sesuai</span></h2>
+      <p>Berikan tarikh live, masa live, jumlah penonton dan tempoh live melalui WhatsApp. Kami akan sahkan susunan yang sesuai.</p>
+
+      <div class="quoteChecklist">
+        <div class="quoteItem"><i>01</i><span>Tarikh live</span></div>
+        <div class="quoteItem"><i>02</i><span>Masa live</span></div>
+        <div class="quoteItem"><i>03</i><span>Jumlah penonton</span></div>
+        <div class="quoteItem"><i>04</i><span>Tempoh live</span></div>
+        <div class="quoteItem"><i>05</i><span>Pakej bulanan</span></div>
+        <div class="quoteItem"><i>06</i><span>Sokongan komen</span></div>
+      </div>
+
+      <div class="quoteNote">Hantar melalui WhatsApp — tidak perlu isi borang</div>
+    </div>
+
+    <div class="quoteBridge" aria-hidden="true">
+      <span>Hantar</span>
+      <i></i>
+      <span>Semak</span>
+      <i></i>
+      <span>Pakej</span>
+    </div>
+
+    <div class="quotePanel quotePrice">
+      <div class="quotePriceTop">
+        <div>
+          <div class="kicker">Reference Price</div>
+          <h2>Harga Rujukan</h2>
+          <p>Pakej bulanan, susunan jangka panjang atau sokongan komen akan disahkan mengikut keperluan live anda.</p>
+        </div>
+        <div class="quotePriceCard">
+          <div>Bermula</div>
+          <strong>RM3</strong>
+          <b>50 penonton / 1 jam</b>
+        </div>
+      </div>
+
+      <a class="btn wa quoteCta" href="https://wa.me/60137114191?text=Hi%20Fans%2C%20saya%20ingin%20tanya%20tentang%20sokongan%20Facebook%20Live.%0A%0ATarikh%20live%3A%0AMasa%20live%3A%0AJumlah%20penonton%3A%0ATempoh%20live%3A%0APerlu%20pakej%20bulanan%3A%0APerlu%20sokongan%20suasana%20komen%3A" target="_blank" rel="noopener">Dapatkan Pakej Sesuai di WhatsApp →</a>
+    </div>
+  </div>
 </section>
 <section class="finalcta"><div><h3>Bersedia untuk tambah suasana pada Facebook Live seterusnya?</h3><p>Hantar maklumat live anda dan Fans akan membantu semak pakej yang sesuai melalui WhatsApp.</p></div><a class="btn wa" href="https://wa.me/60137114191?text=Hi%20Fans%2C%20saya%20ingin%20tanya%20tentang%20sokongan%20Facebook%20Live.%0A%0ATarikh%20live%3A%0AMasa%20live%3A%0AJumlah%20penonton%3A%0ATempoh%20live%3A%0APerlu%20pakej%20bulanan%3A%0APerlu%20sokongan%20suasana%20komen%3A" target="_blank" rel="noopener">Tanya WhatsApp</a></section>
 <div class="footer">Fans｜Facebook Live Support</div>
