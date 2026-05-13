@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fans V6.16 Dashboard & Footer WhatsApp 去重版</title>
+<style>
+body{font-family:Inter,Arial,'Microsoft YaHei',sans-serif;background:#f8fafc;color:#0f172a;margin:0;padding:32px;line-height:1.7}
+.wrap{max-width:980px;margin:auto;background:white;border:1px solid #e2e8f0;border-radius:28px;padding:34px;box-shadow:0 18px 50px rgba(15,23,42,.08)}
+h1{font-size:32px;margin:0 0 12px}
+h2{margin-top:34px}
+code,pre{background:#f1f5f9;border-radius:16px}
+pre{padding:18px;overflow:auto;white-space:pre-wrap}
+.badge{display:inline-block;background:#ede9fe;color:#5b21b6;padding:8px 12px;border-radius:999px;font-weight:800;margin-bottom:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="badge">Fans V6.16</div>
+<h1>Dashboard & Footer WhatsApp 去重版</h1>
+<p>把下面 CSS 贴到三个页面的 <code>&lt;/style&gt;</code> 前面即可。</p>
+
+<h2>完整 CSS</h2>
+<pre>/* =========================================================
+   Fans V6.16 Dashboard &amp; Footer WhatsApp 去重版
+   作用：
+   1. 去除首屏右侧 Dashboard 内部 WhatsApp 按钮
+   2. 去除 Footer 的 WhatsApp 链接
+   3. 保留 Header、Hero、Quote Price、Bottom CTA 的 WhatsApp 主按钮
+   使用：
+   把整段 CSS 放到三个页面 index.html / english.html / bahasa.html 的 &lt;/style&gt; 前面
+   ========================================================= */
+
+/* ---------- 1) Dashboard 内部 WhatsApp 按钮去除 ---------- */
+/* 旧版 Dashboard 价格条里的按钮 */
+.panel .quote .qbtn,
+.panel .quote a.qbtn,
+
+/* 新版 Dashboard / Carousel / Slide 里可能出现的 WhatsApp CTA */
+.panel .dashboard-wa,
+.panel .dashboard-whatsapp,
+.panel .dash-wa-btn,
+.panel .slide-cta,
+.panel .carousel-cta,
+.panel .visual-cta,
+.panel .card-cta,
+.panel .mini-cta,
+.panel .support-cta,
+
+/* 兜底：只隐藏 panel 里面直接指向 WhatsApp 的链接，不影响其他区域 */
+.panel a[href*="wa.me"],
+.panel a[href*="api.whatsapp.com"] {
+  display: none !important;
+}
+
+/* Dashboard 按钮删除后，底部空间自然收口 */
+.panel .inner {
+  padding-bottom: clamp(24px, 2.4vw, 34px);
+}
+
+/* 如果 Dashboard 有 tabs / arrows，删除按钮后稍微上收 */
+.panel .tabs,
+.panel .dashboard-tabs,
+.panel .carousel-tabs,
+.panel .switch-tabs {
+  margin-top: clamp(14px, 1.8vw, 22px) !important;
+}
+
+.panel .arrows,
+.panel .dashboard-arrows,
+.panel .carousel-arrows {
+  margin-top: 12px !important;
+}
+
+/* 手机端 Dashboard 收口，避免按钮消失后留下过大空白 */
+@media (max-width: 780px) {
+  .panel .inner {
+    padding-bottom: 22px !important;
+  }
+
+  .panel .tabs,
+  .panel .dashboard-tabs,
+  .panel .carousel-tabs,
+  .panel .switch-tabs {
+    margin-top: 14px !important;
+  }
+
+  .panel .arrows,
+  .panel .dashboard-arrows,
+  .panel .carousel-arrows {
+    margin-top: 10px !important;
+  }
+}
+
+
+/* ---------- 2) Footer WhatsApp 链接去除 ---------- */
+/* 只隐藏 Footer 里的 WhatsApp，不影响 Hero / Quote Price / Bottom CTA */
+.footer a[href*="wa.me"],
+.site-footer a[href*="wa.me"],
+.footer a[href*="api.whatsapp.com"],
+.site-footer a[href*="api.whatsapp.com"],
+.footer .footer-whatsapp,
+.site-footer .footer-whatsapp,
+.footer .whatsapp-link,
+.site-footer .whatsapp-link,
+.footer .footer-wa,
+.site-footer .footer-wa {
+  display: none !important;
+}
+
+/* Footer 去掉 WhatsApp 后保持干净居中 */
+.footer,
+.site-footer {
+  text-align: center;
+}
+
+.footer nav,
+.site-footer nav,
+.footer .footer-links,
+.site-footer .footer-links {
+  justify-content: center;
+}
+
+/* 避免 Footer 右侧原本 WhatsApp 空位造成视觉偏移 */
+.footer .footer-inner,
+.site-footer .footer-inner {
+  justify-content: center;
+  text-align: center;
+}
+
+
+/* =========================================================
+   Fans V6.16 Footer Styling
+   只在你替换成 clean footer snippets 时使用。
+   如果原本 Footer 样式已经满意，可不加。
+   ========================================================= */
+
+.site-footer {
+  padding: 44px 0 10px;
+  color: #94a3b8;
+  text-align: center;
+  font-weight: 850;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  color: #64748b;
+}
+
+.footer-brand strong {
+  color: #64748b;
+  font-size: 18px;
+  font-weight: 950;
+}
+
+.footer-brand span {
+  font-size: 16px;
+  font-weight: 850;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+  color: #94a3b8;
+}
+
+.footer-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+.footer-links a:hover {
+  color: #5b4dff;
+}
+
+.footer-links span {
+  color: #cbd5e1;
+}
+
+.footer-copy {
+  color: #a3b1c6;
+  font-size: 14px;
+  font-weight: 850;
+}
+
+@media (max-width: 780px) {
+  .site-footer {
+    padding: 34px 18px 10px;
+  }
+
+  .footer-brand {
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 16px;
+  }
+
+  .footer-brand strong {
+    font-size: 22px;
+  }
+
+  .footer-brand span {
+    font-size: 18px;
+  }
+
+  .footer-links {
+    gap: 10px;
+    line-height: 1.9;
+    font-size: 18px;
+  }
+
+  .footer-copy {
+    font-size: 17px;
+    margin-top: 8px;
+  }
+}
+</pre>
+
+<h2>Footer HTML Snippets</h2>
+<pre>&lt;!-- ======================================================
+Fans V6.16 Clean Footer Snippets
+用法：
+如果你想彻底替换 Footer，可以分别把对应语言的 footer 换成下面版本。
+如果你只想用 CSS 隐藏 Footer WhatsApp，就不一定要替换 HTML。
+====================================================== --&gt;
+
+
+&lt;!-- 中文 Footer --&gt;
+&lt;footer class="site-footer footer"&gt;
+  &lt;div class="footer-brand"&gt;
+    &lt;strong&gt;Fans&lt;/strong&gt;
+    &lt;span&gt;Facebook Live Support&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;nav class="footer-links"&gt;
+    &lt;a href="index.html"&gt;中文&lt;/a&gt;
+    &lt;span&gt;·&lt;/span&gt;
+    &lt;a href="english.html"&gt;English&lt;/a&gt;
+    &lt;span&gt;·&lt;/span&gt;
+    &lt;a href="bahasa.html"&gt;Bahasa Melayu&lt;/a&gt;
+    &lt;span&gt;·&lt;/span&gt;
+    &lt;a href="#services"&gt;服务&lt;/a&gt;
+    &lt;span&gt;·&lt;/span&gt;
+    &lt;a href="#price"&gt;价格&lt;/a&gt;
+  &lt;/nav&gt;
+
+  &lt;div class="footer-copy"&gt;© Fans. Facebook Live Support.&lt;/div&gt;
+&lt;/footer&gt;
+
+
+&lt;!-- English Footer --&gt;
+&lt;footer class="site-footer footer"&gt;
+  &lt;div class="footer-brand"&gt;
+    &lt;strong&gt;Fans&lt;/strong&gt;
+    &lt;span&gt;Facebook Live Support&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;nav class="footer-links"&gt;
+    &lt;a href="index.html"&gt;中文&lt;/a&gt;
+    &lt;span&gt;·&lt;/span&gt;
+    &lt;a href="english.html"&gt;English&lt;/a&gt;
+    &lt;span&gt;·&lt;/span&gt;
+    &lt;a href="bahasa.html"&gt;Bahasa Melayu&lt;/a&gt;
+    &lt;span&gt;·&lt;/span&gt;
+    &lt;a href="#services"&gt;Services&lt;/a&gt;
+    &lt;span&gt;·&lt;/span&gt;
+    &lt;a href="#price"&gt;Pricing&lt;/a&gt;
+  &lt;/nav&gt;
+
+  &lt;div class="footer-copy"&gt;© Fans. Facebook Live Support.&lt;/div&gt;
+&lt;/footer&gt;
+
+
+&lt;!-- Bahasa Melayu Footer --&gt;
+&lt;footer class="site-footer footer"&gt;
+  &lt;div class="footer-brand"&gt;
+    &lt;strong&gt;Fans&lt;/strong&gt;
+    &lt;span&gt;Facebook Live Support&lt;/span&gt;
+  &lt;/div&gt;
+
+  &lt;nav class="footer-links"&gt;
+    &lt;a href="index.html"&gt;中文&lt;/a&gt;
+    &lt;span&gt;·&lt;/span&gt;
+    &lt;a href="english.html"&gt;English&lt;/a&gt;
+    &lt;span&gt;·&lt;/span&gt;
+    &lt;a href="bahasa.html"&gt;Bahasa Melayu&lt;/a&gt;
+    &lt;span&gt;·&lt;/span&gt;
+    &lt;a href="#services"&gt;Servis&lt;/a&gt;
+    &lt;span&gt;·&lt;/span&gt;
+    &lt;a href="#price"&gt;Harga&lt;/a&gt;
+  &lt;/nav&gt;
+
+  &lt;div class="footer-copy"&gt;© Fans. Facebook Live Support.&lt;/div&gt;
+&lt;/footer&gt;
+</pre>
+</div>
+</body>
+</html>

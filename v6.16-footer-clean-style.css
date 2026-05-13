@@ -1,0 +1,93 @@
+/* =========================================================
+   Fans V6.16 Footer Styling
+   只在你替换成 clean footer snippets 时使用。
+   如果原本 Footer 样式已经满意，可不加。
+   ========================================================= */
+
+.site-footer {
+  padding: 44px 0 10px;
+  color: #94a3b8;
+  text-align: center;
+  font-weight: 850;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  color: #64748b;
+}
+
+.footer-brand strong {
+  color: #64748b;
+  font-size: 18px;
+  font-weight: 950;
+}
+
+.footer-brand span {
+  font-size: 16px;
+  font-weight: 850;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+  color: #94a3b8;
+}
+
+.footer-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+.footer-links a:hover {
+  color: #5b4dff;
+}
+
+.footer-links span {
+  color: #cbd5e1;
+}
+
+.footer-copy {
+  color: #a3b1c6;
+  font-size: 14px;
+  font-weight: 850;
+}
+
+@media (max-width: 780px) {
+  .site-footer {
+    padding: 34px 18px 10px;
+  }
+
+  .footer-brand {
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 16px;
+  }
+
+  .footer-brand strong {
+    font-size: 22px;
+  }
+
+  .footer-brand span {
+    font-size: 18px;
+  }
+
+  .footer-links {
+    gap: 10px;
+    line-height: 1.9;
+    font-size: 18px;
+  }
+
+  .footer-copy {
+    font-size: 17px;
+    margin-top: 8px;
+  }
+}

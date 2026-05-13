@@ -1,0 +1,106 @@
+/* =========================================================
+   Fans V6.16 Dashboard & Footer WhatsApp 去重版
+   作用：
+   1. 去除首屏右侧 Dashboard 内部 WhatsApp 按钮
+   2. 去除 Footer 的 WhatsApp 链接
+   3. 保留 Header、Hero、Quote Price、Bottom CTA 的 WhatsApp 主按钮
+   使用：
+   把整段 CSS 放到三个页面 index.html / english.html / bahasa.html 的 </style> 前面
+   ========================================================= */
+
+/* ---------- 1) Dashboard 内部 WhatsApp 按钮去除 ---------- */
+/* 旧版 Dashboard 价格条里的按钮 */
+.panel .quote .qbtn,
+.panel .quote a.qbtn,
+
+/* 新版 Dashboard / Carousel / Slide 里可能出现的 WhatsApp CTA */
+.panel .dashboard-wa,
+.panel .dashboard-whatsapp,
+.panel .dash-wa-btn,
+.panel .slide-cta,
+.panel .carousel-cta,
+.panel .visual-cta,
+.panel .card-cta,
+.panel .mini-cta,
+.panel .support-cta,
+
+/* 兜底：只隐藏 panel 里面直接指向 WhatsApp 的链接，不影响其他区域 */
+.panel a[href*="wa.me"],
+.panel a[href*="api.whatsapp.com"] {
+  display: none !important;
+}
+
+/* Dashboard 按钮删除后，底部空间自然收口 */
+.panel .inner {
+  padding-bottom: clamp(24px, 2.4vw, 34px);
+}
+
+/* 如果 Dashboard 有 tabs / arrows，删除按钮后稍微上收 */
+.panel .tabs,
+.panel .dashboard-tabs,
+.panel .carousel-tabs,
+.panel .switch-tabs {
+  margin-top: clamp(14px, 1.8vw, 22px) !important;
+}
+
+.panel .arrows,
+.panel .dashboard-arrows,
+.panel .carousel-arrows {
+  margin-top: 12px !important;
+}
+
+/* 手机端 Dashboard 收口，避免按钮消失后留下过大空白 */
+@media (max-width: 780px) {
+  .panel .inner {
+    padding-bottom: 22px !important;
+  }
+
+  .panel .tabs,
+  .panel .dashboard-tabs,
+  .panel .carousel-tabs,
+  .panel .switch-tabs {
+    margin-top: 14px !important;
+  }
+
+  .panel .arrows,
+  .panel .dashboard-arrows,
+  .panel .carousel-arrows {
+    margin-top: 10px !important;
+  }
+}
+
+
+/* ---------- 2) Footer WhatsApp 链接去除 ---------- */
+/* 只隐藏 Footer 里的 WhatsApp，不影响 Hero / Quote Price / Bottom CTA */
+.footer a[href*="wa.me"],
+.site-footer a[href*="wa.me"],
+.footer a[href*="api.whatsapp.com"],
+.site-footer a[href*="api.whatsapp.com"],
+.footer .footer-whatsapp,
+.site-footer .footer-whatsapp,
+.footer .whatsapp-link,
+.site-footer .whatsapp-link,
+.footer .footer-wa,
+.site-footer .footer-wa {
+  display: none !important;
+}
+
+/* Footer 去掉 WhatsApp 后保持干净居中 */
+.footer,
+.site-footer {
+  text-align: center;
+}
+
+.footer nav,
+.site-footer nav,
+.footer .footer-links,
+.site-footer .footer-links {
+  justify-content: center;
+}
+
+/* 避免 Footer 右侧原本 WhatsApp 空位造成视觉偏移 */
+.footer .footer-inner,
+.site-footer .footer-inner {
+  justify-content: center;
+  text-align: center;
+}
