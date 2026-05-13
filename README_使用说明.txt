@@ -1,15 +1,18 @@
-V6.19 三语文案最终收口版
+V6.21 三语文案洁净统一版
 
-已调整：
-1. 中文首页 More Than Viewers 段落减少一次 WhatsApp 露出。
-2. 中文 Service Package 三个卡片底部英文小标签改为中文：小时人数支持 / 包月灵活安排 / 评论气氛支持。
-3. 马来文 Support Layers 说明句调整为更自然的表达：siaran live nampak lebih jelas, aktif dan meyakinkan。
-4. 保留 Dashboard 与 Footer 去除重复 WhatsApp 按钮后的结构。
-5. 保留 V6.18 Dashboard 内部内容轻微放大效果，且不含会破坏页面的 </style> 注释文字。
+这版只做文字洁净统一，不动版式、字体、Dashboard、CTA、Footer 结构。
+
+修改内容：
+1. 英文 More Than Viewers 去掉 “through WhatsApp”
+2. 马来文 More Than Viewers 去掉 “melalui WhatsApp”
+3. 第二屏小标签减少 WhatsApp：
+   - 中文：配套快速确认
+   - English：Package Confirmation
+   - Bahasa：Sahkan Pakej
+4. 马来文两处 live room 改为 siaran live
+5. 中文 Service Package 第三张卡底部标签：
+   - 评论气氛支持 → 评论节奏支持
 
 上传方式：
-- 到 GitHub 分别打开原本的 index.html、english.html、bahasa.html。
-- 用本文件夹里的同名文件内容覆盖原本代码。
-- 或直接上传 ZIP 解压后的同名文件进行替换。
-
-注意：不要上传成 index.html.html / english.html.html / bahasa.html.html。
+把 zip 里的 index.html / english.html / bahasa.html 覆盖 GitHub 原本同名文件。
+不要上传成 index.html.html、english.html.html 或 bahasa.html.html。
