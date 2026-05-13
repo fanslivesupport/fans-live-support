@@ -3374,10 +3374,140 @@ img, svg, video, canvas{
   }
 }
 
+
+/* V6.14 Quote Price final tight version */
+/* Scope: only WhatsApp Quote + Reference Price section. No layout rebuild. */
+
+.quoteV612Shell{
+  box-shadow:0 26px 76px rgba(91,77,255,.075);
+}
+
+.quoteItem{
+  background:rgba(248,250,252,.74);
+}
+
+.quoteNote{
+  background:rgba(255,255,255,.78);
+}
+
+.quoteCta.wa{
+  background:linear-gradient(135deg,#22c55e 0%,#16a34a 100%);
+  box-shadow:0 16px 34px rgba(34,197,94,.18);
+}
+
+.quotePriceCard{
+  box-shadow:0 20px 48px rgba(91,77,255,.22);
+}
+
+@media(max-width:980px){
+  .quoteV612Shell{
+    gap:12px;
+  }
+
+  .quoteBrief p,
+  .quotePrice p{
+    line-height:1.44;
+  }
+
+  .quoteChecklist{
+    margin-top:13px;
+  }
+
+  .quoteNote{
+    margin-top:10px;
+  }
+
+  .quotePrice{
+    margin-top:-2px;
+  }
+
+  .quotePrice .kicker{
+    margin-bottom:0;
+  }
+
+  .quotePriceTop{
+    gap:10px;
+  }
+
+  .quotePriceCard{
+    min-height:108px;
+  }
+
+  .quoteCta{
+    margin-top:10px;
+  }
+}
+
+@media(max-width:430px){
+  .quoteV612Shell{
+    padding:21px 15px;
+  }
+
+  .quoteBrief h2,
+  .quotePrice h2{
+    font-size:24px;
+    line-height:1.07;
+  }
+
+  .quoteBrief p,
+  .quotePrice p{
+    font-size:13.2px;
+    line-height:1.42;
+  }
+
+  .quoteChecklist{
+    gap:7px;
+    margin-top:13px;
+  }
+
+  .quoteItem{
+    min-height:38px;
+    padding:7px 8px;
+  }
+
+  .quoteItem span{
+    font-size:11.8px;
+  }
+
+  .quoteNote{
+    margin-top:9px;
+    font-size:10.8px;
+  }
+
+  .quotePriceCard{
+    min-height:104px;
+    padding:15px 18px;
+  }
+
+  .quotePriceCard strong{
+    font-size:44px;
+  }
+
+  .quoteCta{
+    min-height:48px;
+    font-size:13.2px;
+  }
+}
+
+@media(max-width:370px){
+  .quoteBrief h2,
+  .quotePrice h2{
+    font-size:22.5px;
+  }
+
+  .quoteItem span{
+    font-size:11px;
+  }
+
+  .quotePriceCard strong{
+    font-size:40px;
+  }
+}
+
 </style>
 </head>
 <body>
-<!-- v6.13-quote-price-mobile-short -->
+<!-- v6.14-quote-price-final-tight -->
 <div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 <div class="wrap">
 <header class="nav">
@@ -3554,10 +3684,10 @@ img, svg, video, canvas{
         <div class="quoteItem"><i>03</i><span>需要人数</span></div>
         <div class="quoteItem"><i>04</i><span>需要时长</span></div>
         <div class="quoteItem"><i>05</i><span>是否包月</span></div>
-        <div class="quoteItem"><i>06</i><span>是否需要评论气氛</span></div>
+        <div class="quoteItem"><i>06</i><span>评论气氛支持</span></div>
       </div>
 
-      <div class="quoteNote">通过 WhatsApp 发送即可，不需要填写表格</div>
+      <div class="quoteNote">WhatsApp 发送即可，不用填写表格</div>
     </div>
 
     <div class="quoteBridge" aria-hidden="true">
