@@ -3157,10 +3157,227 @@ img, svg, video, canvas{
   }
 }
 
+
+/* V6.13 Quote Price mobile short version */
+/* Scope: only WhatsApp Quote + Reference Price section. */
+
+.quoteV612{
+  margin-top:72px;
+}
+
+.quoteBridge{
+  opacity:.58;
+  font-size:9px;
+}
+
+.quoteBridge span{
+  width:50px;
+  min-height:30px;
+  box-shadow:0 8px 20px rgba(91,77,255,.035);
+}
+
+.quoteBridge i{
+  height:36px;
+  background:linear-gradient(180deg,rgba(98,87,255,.08),rgba(98,87,255,.28),rgba(37,99,235,.08));
+}
+
+.quotePriceTop{
+  gap:20px;
+}
+
+.quotePriceCard{
+  min-height:198px;
+}
+
+@media(max-width:980px){
+  .quoteV612{
+    margin-top:50px;
+  }
+
+  .quoteV612Shell{
+    gap:14px;
+    padding:24px 18px;
+  }
+
+  .quoteBrief h2,
+  .quotePrice h2{
+    font-size:28px;
+    line-height:1.08;
+    letter-spacing:-.05em;
+  }
+
+  .quoteBrief p,
+  .quotePrice p{
+    margin-top:12px;
+    font-size:14.5px;
+    line-height:1.48;
+  }
+
+  .quoteChecklist{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px;
+    margin-top:16px;
+  }
+
+  .quoteItem{
+    min-height:42px;
+    padding:8px 10px;
+    border-radius:15px;
+  }
+
+  .quoteItem i{
+    width:24px;
+    height:24px;
+    flex:0 0 24px;
+    font-size:9px;
+  }
+
+  .quoteItem span{
+    font-size:12.8px;
+    line-height:1.18;
+  }
+
+  .quoteNote{
+    margin-top:12px;
+    padding:7px 10px;
+    font-size:11.8px;
+  }
+
+  .quotePriceTop{
+    gap:12px;
+  }
+
+  .quotePriceCard{
+    min-height:128px;
+    padding:18px 20px;
+    border-radius:24px;
+  }
+
+  .quotePriceCard div{
+    font-size:13px;
+  }
+
+  .quotePriceCard strong{
+    font-size:50px;
+    margin-top:4px;
+  }
+
+  .quotePriceCard b{
+    margin-top:4px;
+    font-size:13.5px;
+  }
+
+  .quoteCta{
+    margin-top:14px;
+    min-height:52px;
+    border-radius:16px;
+  }
+}
+
+@media(max-width:430px){
+  .quoteV612{
+    margin-top:44px;
+  }
+
+  .quoteV612Shell{
+    padding:22px 15px;
+    border-radius:28px;
+  }
+
+  .quoteV612Shell:before{
+    inset:9px;
+    border-radius:22px;
+  }
+
+  .quoteBrief h2,
+  .quotePrice h2{
+    font-size:25px;
+    line-height:1.08;
+  }
+
+  .quoteBrief p,
+  .quotePrice p{
+    font-size:13.6px;
+    line-height:1.45;
+  }
+
+  .quoteChecklist{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:7px;
+    margin-top:14px;
+  }
+
+  .quoteItem{
+    min-height:40px;
+    padding:8px 8px;
+    border-radius:14px;
+    gap:7px;
+  }
+
+  .quoteItem i{
+    width:22px;
+    height:22px;
+    flex-basis:22px;
+    font-size:8.5px;
+  }
+
+  .quoteItem span{
+    font-size:12px;
+    line-height:1.18;
+  }
+
+  .quoteNote{
+    width:100%;
+    margin-top:11px;
+    padding:7px 9px;
+    font-size:11px;
+    white-space:normal;
+  }
+
+  .quotePrice{
+    padding-top:0;
+  }
+
+  .quotePriceCard{
+    min-height:112px;
+    padding:16px 18px;
+    border-radius:22px;
+  }
+
+  .quotePriceCard strong{
+    font-size:46px;
+  }
+
+  .quotePriceCard b{
+    font-size:12.8px;
+  }
+
+  .quoteCta{
+    min-height:50px;
+    margin-top:12px;
+    font-size:13.5px;
+  }
+}
+
+@media(max-width:370px){
+  .quoteBrief h2,
+  .quotePrice h2{
+    font-size:23px;
+  }
+
+  .quoteItem span{
+    font-size:11.2px;
+  }
+
+  .quotePriceCard strong{
+    font-size:42px;
+  }
+}
+
 </style>
 </head>
 <body>
-<!-- v6.12-quote-reference-price-upgrade -->
+<!-- v6.13-quote-price-mobile-short -->
 <div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 <div class="wrap">
 <header class="nav">
@@ -3356,7 +3573,7 @@ img, svg, video, canvas{
         <div>
           <div class="kicker">Reference Price</div>
           <h2>Harga Rujukan</h2>
-          <p>Pakej bulanan, susunan jangka panjang atau sokongan komen akan disahkan mengikut keperluan live anda.</p>
+          <p>Pakej bulanan, jangka panjang atau sokongan komen akan disahkan ikut keperluan live.</p>
         </div>
         <div class="quotePriceCard">
           <div>Bermula</div>
