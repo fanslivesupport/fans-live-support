@@ -3776,10 +3776,184 @@ img, svg, video, canvas{
   }
 }
 
+
+/* =========================================================
+   V6.17 Dashboard Compact Closing
+   右侧 Dashboard 去除内部 WhatsApp 后，轻微回收底部空间
+   只收高度与间距，不改变整体风格和结构
+========================================================= */
+
+@media (min-width: 981px){
+  .panel{
+    max-width: 492px !important;
+    padding: 10px !important;
+  }
+
+  .inner{
+    padding: 14px 14px 13px !important;
+  }
+
+  .min-carousel{
+    gap: 8px !important;
+  }
+
+  .min-card{
+    width: min(382px, 100%) !important;
+    aspect-ratio: 1 / 0.80 !important;
+  }
+
+  .min-slide{
+    padding: 21px 22px 19px !important;
+  }
+
+  .min-label{
+    padding: 8px 12px !important;
+  }
+
+  .min-slide h3{
+    margin: 13px 0 5px !important;
+    font-size: 30px !important;
+  }
+
+  .min-slide p{
+    min-height: 36px !important;
+    line-height: 1.48 !important;
+  }
+
+  .min-body{
+    margin-top: 11px !important;
+    grid-template-columns: 1fr 106px !important;
+    gap: 12px !important;
+  }
+
+  .min-stat{
+    padding: 15px 17px !important;
+    border-radius: 22px !important;
+  }
+
+  .min-visual{
+    border-radius: 22px !important;
+  }
+
+  .min-live{
+    padding: 11px 15px !important;
+  }
+
+  .min-tabs{
+    width: min(382px, 100%) !important;
+    gap: 7px !important;
+  }
+
+  .min-tab{
+    padding: 9px 6px !important;
+  }
+
+  .min-arrows{
+    width: min(382px, 100%) !important;
+    gap: 8px !important;
+  }
+
+  .min-arrow{
+    width: 32px !important;
+    height: 32px !important;
+  }
+}
+
+@media (min-width: 981px) and (max-width: 1180px){
+  .min-card,
+  .min-tabs,
+  .min-arrows{
+    width: min(360px, 100%) !important;
+  }
+
+  .min-card{
+    aspect-ratio: 1 / 0.82 !important;
+  }
+}
+
+@media (max-width: 980px){
+  .panel{
+    padding: 9px !important;
+  }
+
+  .inner{
+    padding: 12px !important;
+  }
+
+  .min-carousel{
+    gap: 8px !important;
+  }
+
+  .min-card{
+    max-width: 330px !important;
+    aspect-ratio: 1 / 0.86 !important;
+  }
+
+  .min-slide{
+    padding: 18px 17px 16px !important;
+  }
+
+  .min-slide h3{
+    margin: 14px 0 6px !important;
+    font-size: 25px !important;
+  }
+
+  .min-slide p{
+    line-height: 1.42 !important;
+  }
+
+  .min-body{
+    margin-top: 12px !important;
+    grid-template-columns: 1fr 86px !important;
+    gap: 9px !important;
+  }
+
+  .min-stat{
+    padding: 12px 13px !important;
+  }
+
+  .min-tabs{
+    max-width: 330px !important;
+    gap: 6px !important;
+  }
+
+  .min-tab{
+    padding: 8px 4px !important;
+  }
+}
+
+@media (max-width: 430px){
+  .min-card,
+  .min-tabs{
+    max-width: 310px !important;
+  }
+
+  .min-card{
+    aspect-ratio: 1 / 0.88 !important;
+  }
+
+  .min-slide{
+    padding: 16px !important;
+  }
+
+  .min-slide h3{
+    margin-top: 12px !important;
+    font-size: 23px !important;
+  }
+
+  .min-body{
+    grid-template-columns: 1fr 82px !important;
+  }
+
+  .min-stat b{
+    font-size: 18px !important;
+  }
+}
+
 </style>
 </head>
 <body>
-<!-- v6.16-integrated-no-dashboard-footer-whatsapp -->
+<!-- v6.17-dashboard-compact-no-dashboard-footer-whatsapp -->
 <div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 <div class="wrap">
 <header class="nav">
