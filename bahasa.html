@@ -3950,153 +3950,91 @@ img, svg, video, canvas{
   }
 }
 
-  /* =========================================================
-   V6.18 Dashboard 内部内容轻微放大版
-   用途：
-   - Dashboard 外框尺寸保持不变
+
+/* =========================================================
+   V6.18 Dashboard 内部内容轻微放大修复版
+   说明：
+   - 修复之前 CSS 注释里出现 HTML 结束标签导致 CSS 文字跑到页面上方的问题
+   - 只影响首屏右侧 Dashboard / min-carousel
    - 不恢复 Dashboard 内部 WhatsApp 按钮
-   - 只让 Dashboard 内部标题、说明、价格卡、LIVE 图标更饱满一点
-   - 适用于 index.html / english.html / bahasa.html
-   使用方法：
-   把本段 CSS 复制到每个页面的 </style> 前面。
+   - 外框尺寸保持不变，只让内部标题、说明、价格卡和 LIVE 图标更饱满
 ========================================================= */
 
+@media (min-width: 981px){
+  .hero > .panel .min-slide h3{
+    font-size: 31px !important;
+    line-height: 1.06 !important;
+    letter-spacing: -0.045em !important;
+  }
 
-/* ---------- 1. 只限制在首屏右侧 Dashboard 内，不影响左侧首屏 ---------- */
+  .hero > .panel .min-slide p{
+    font-size: 13.8px !important;
+    line-height: 1.5 !important;
+  }
 
-.hero-dashboard {
-  overflow: visible;
-}
+  .hero > .panel .min-label{
+    font-size: 11px !important;
+    padding: 8px 13px !important;
+  }
 
+  .hero > .panel .min-stat{
+    padding: 16px 18px !important;
+  }
 
-/* ---------- 2. 内部主内容轻微放大：桌面端 ---------- */
-/* 不改 Dashboard 外框，只让里面的卡片内容更满一点 */
+  .hero > .panel .min-stat b{
+    font-size: 24px !important;
+    line-height: 1.1 !important;
+  }
 
-@media (min-width: 769px) {
-  .hero-dashboard .dashboard-card,
-  .hero-dashboard .dashboard-panel,
-  .hero-dashboard .dashboard-main,
-  .hero-dashboard .dashboard-content,
-  .hero-dashboard .slide-card,
-  .hero-dashboard .slide-content,
-  .hero-dashboard .preview-card,
-  .hero-dashboard .service-preview,
-  .hero-dashboard .carousel-card {
-    transform: scale(1.035);
+  .hero > .panel .min-stat span{
+    font-size: 12px !important;
+  }
+
+  .hero > .panel .min-live{
+    transform: scale(1.03);
     transform-origin: center center;
-  }
-
-  /* 标题略微更稳 */
-  .hero-dashboard h2,
-  .hero-dashboard h3,
-  .hero-dashboard .dashboard-title,
-  .hero-dashboard .slide-title,
-  .hero-dashboard .card-title {
-    letter-spacing: -0.02em;
-  }
-
-  /* 信息卡与 LIVE 视觉略增强，但不要抢主标题 */
-  .hero-dashboard .price-card,
-  .hero-dashboard .metric-card,
-  .hero-dashboard .info-card,
-  .hero-dashboard .live-box,
-  .hero-dashboard .live-badge,
-  .hero-dashboard .live-icon {
-    transform: scale(1.025);
-    transform-origin: center center;
-  }
-
-  /* Tabs 稍微靠近主卡，减少底部空感 */
-  .hero-dashboard .dashboard-tabs,
-  .hero-dashboard .tabs,
-  .hero-dashboard .tab-row,
-  .hero-dashboard .category-tabs {
-    margin-top: -2px;
-  }
-
-  .hero-dashboard .dashboard-tab,
-  .hero-dashboard .tab,
-  .hero-dashboard .tab-item,
-  .hero-dashboard .category-tab {
-    font-weight: 800;
-  }
-
-  .hero-dashboard .dashboard-arrows,
-  .hero-dashboard .arrow-row,
-  .hero-dashboard .carousel-arrows {
-    margin-top: 6px;
   }
 }
 
-
-/* ---------- 3. 手机端：更克制，只补内部饱满度 ---------- */
-/* 手机端目前尺寸已经刚好，所以只放大一点点 */
-
-@media (max-width: 768px) {
-  .hero-dashboard .dashboard-card,
-  .hero-dashboard .dashboard-panel,
-  .hero-dashboard .dashboard-main,
-  .hero-dashboard .dashboard-content,
-  .hero-dashboard .slide-card,
-  .hero-dashboard .slide-content,
-  .hero-dashboard .preview-card,
-  .hero-dashboard .service-preview,
-  .hero-dashboard .carousel-card {
-    transform: scale(1.025);
-    transform-origin: center center;
+@media (max-width: 980px){
+  .hero > .panel .min-slide h3{
+    font-size: 26px !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.04em !important;
   }
 
-  .hero-dashboard h2,
-  .hero-dashboard h3,
-  .hero-dashboard .dashboard-title,
-  .hero-dashboard .slide-title,
-  .hero-dashboard .card-title {
-    letter-spacing: -0.018em;
+  .hero > .panel .min-slide p{
+    font-size: 13.3px !important;
+    line-height: 1.46 !important;
   }
 
-  .hero-dashboard .price-card,
-  .hero-dashboard .metric-card,
-  .hero-dashboard .info-card,
-  .hero-dashboard .live-box,
-  .hero-dashboard .live-badge,
-  .hero-dashboard .live-icon {
+  .hero > .panel .min-label{
+    font-size: 11px !important;
+  }
+
+  .hero > .panel .min-stat b{
+    font-size: 20px !important;
+  }
+
+  .hero > .panel .min-live{
     transform: scale(1.02);
     transform-origin: center center;
   }
+}
 
-  .hero-dashboard .dashboard-tabs,
-  .hero-dashboard .tabs,
-  .hero-dashboard .tab-row,
-  .hero-dashboard .category-tabs {
-    margin-top: -2px;
+@media (max-width: 430px){
+  .hero > .panel .min-slide h3{
+    font-size: 24px !important;
+  }
+
+  .hero > .panel .min-slide p{
+    font-size: 13px !important;
+  }
+
+  .hero > .panel .min-stat b{
+    font-size: 19px !important;
   }
 }
-
-
-/* ---------- 4. 安全保险：继续保持 Dashboard 内 WhatsApp 按钮隐藏 ---------- */
-/* 如果前面版本已经隐藏，这段不会造成副作用；如果某一页漏掉，也能补上 */
-
-.hero-dashboard a[href*="wa.me"],
-.hero-dashboard a[href*="whatsapp"],
-.hero-dashboard .dashboard-cta,
-.hero-dashboard .slide-cta,
-.hero-dashboard .card-cta,
-.hero-dashboard .support-cta {
-  display: none !important;
-}
-
-
-/* ---------- 5. 如果某页放大后太满，只改这里 ---------- */
-/*
-如果 Dashboard 内容太满：
-把上面的 scale(1.035) 改成 scale(1.025)
-把手机端 scale(1.025) 改成 scale(1.015)
-
-如果 Dashboard 内容还是太空：
-把上面的 scale(1.035) 改成 scale(1.045)
-把手机端 scale(1.025) 改成 scale(1.03)
-*/
-
 
 </style>
 </head>
