@@ -1534,10 +1534,84 @@ img, svg, video, canvas{
   }
 }
 
+
+/* V6.7 final lock-in: second-screen brand value card only */
+.conceptmini{
+  font-size:12.5px;
+  font-weight:850;
+  color:rgba(91,77,255,.78);
+}
+
+.concepttext p{
+  color:#6b7a90;
+}
+
+/* Keep desktop almost unchanged; only make the final auxiliary line quieter */
+@media(min-width:981px){
+  .conceptmini{
+    margin-top:18px;
+    opacity:.9;
+  }
+}
+
+/* Mobile final tightening: lighter, calmer, no second-hero feeling */
+@media(max-width:980px){
+  .conceptinner{
+    background:
+      radial-gradient(circle at 88% 12%,rgba(196,181,253,.16) 0 24px,transparent 25px),
+      linear-gradient(135deg,#f8f6ff 0%,#fbfdff 100%);
+  }
+
+  .conceptinner:before{
+    width:72px;
+    height:3px;
+    opacity:.46;
+  }
+
+  .lightconcept h2{
+    font-size:23.5px;
+    line-height:1.18;
+    letter-spacing:-.032em;
+  }
+
+  .concepttext p{
+    font-size:14.5px;
+    line-height:1.58;
+    color:#738196;
+  }
+
+  .conceptmini{
+    font-size:11.8px;
+    line-height:1.45;
+    font-weight:800;
+    color:rgba(91,77,255,.72);
+    margin-top:14px;
+  }
+
+  .conceptchips span{
+    font-weight:850;
+  }
+}
+
+@media(max-width:430px){
+  .lightconcept h2{
+    font-size:23px;
+  }
+
+  .concepttext p{
+    font-size:14.2px;
+    line-height:1.56;
+  }
+
+  .conceptmini{
+    font-size:11.6px;
+  }
+}
+
 </style>
 </head>
 <body>
-<!-- v6.6-mobile-second-card-tight -->
+<!-- v6.7-second-screen-final -->
 <div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 <div class="wrap">
 <header class="nav">
