@@ -719,161 +719,363 @@ img, svg, video, canvas{
 }
 
 
-/* V6.0 Hero Unified Visual - Option A */
+/* V6.1 Minimal Dashboard Carousel - clean right visual only */
 @media(min-width:981px){
-  .hero{grid-template-columns:1.02fr .98fr;gap:42px;align-items:center}
-  h1{font-size:56px;line-height:1.04;letter-spacing:-.052em}
-  .panel{max-width:540px;padding:12px;border-radius:36px}
-  .inner{padding:20px;border-radius:30px}
-  .systemtop h2{font-size:32px;line-height:1.12}
-  .systemtop p{font-size:13px}
+  .hero{
+    grid-template-columns:1.04fr .96fr;
+    gap:40px;
+    align-items:center;
+  }
+
+  h1{
+    font-size:56px;
+    line-height:1.04;
+    letter-spacing:-.052em;
+  }
+
+  .panel{
+    max-width:500px;
+    padding:12px;
+    border-radius:36px;
+  }
+
+  .inner{
+    padding:16px;
+    border-radius:30px;
+  }
 }
 
-.visual-preview{
-  margin-top:22px;
-  border-radius:32px;
+.min-carousel{
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+  overflow:hidden;
+}
+
+.min-card{
+  width:min(390px,100%);
+  aspect-ratio:1 / 1;
+  position:relative;
+  overflow:hidden;
+  border-radius:30px;
   border:1px solid rgba(226,232,240,.95);
   background:
-    radial-gradient(circle at 84% 18%,rgba(196,181,253,.62) 0 14px,transparent 15px),
-    radial-gradient(circle at 84% 66%,rgba(147,197,253,.70) 0 17px,transparent 18px),
+    radial-gradient(circle at 82% 19%,rgba(196,181,253,.62) 0 14px,transparent 15px),
+    radial-gradient(circle at 87% 60%,rgba(147,197,253,.72) 0 16px,transparent 17px),
+    radial-gradient(circle at 66% 73%,rgba(167,139,250,.62) 0 16px,transparent 17px),
     linear-gradient(135deg,#eef2ff 0%,#fbfdff 100%);
   box-shadow:0 22px 56px rgba(90,90,150,.10), inset 0 1px 0 rgba(255,255,255,.92);
-  padding:24px;
-  overflow:hidden;
 }
-.preview-stage{
-  border-radius:28px;
-  min-height:260px;
-  background:rgba(255,255,255,.58);
-  border:1px solid rgba(255,255,255,.90);
-  display:grid;
-  grid-template-columns:1.05fr .82fr;
-  gap:18px;
-  align-items:center;
-  padding:24px;
-  position:relative;
-  overflow:hidden;
-}
-.preview-stage:before{
-  content:"";
-  position:absolute;
-  left:30px;
-  right:30px;
-  bottom:30px;
-  height:10px;
-  border-radius:999px;
-  background:linear-gradient(90deg,rgba(91,77,255,.16),rgba(37,99,235,.08));
-}
-.preview-live{
-  position:relative;
-  z-index:2;
-  border-radius:28px;
-  background:
-    radial-gradient(circle at 72% 26%,#ddd6fe 0 12px,transparent 13px),
-    radial-gradient(circle at 85% 66%,#bfdbfe 0 14px,transparent 15px),
-    linear-gradient(135deg,#f8fbff,#eef2ff);
-  min-height:190px;
+
+.min-track{
+  height:100%;
   display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.9);
+  transition:transform .58s cubic-bezier(.22,.72,.22,1);
 }
-.live-badge{
-  border-radius:18px;
-  padding:14px 20px;
-  background:linear-gradient(135deg,#6d28d9,#2563eb);
-  color:white;
-  font-weight:950;
-  box-shadow:0 18px 36px rgba(91,77,255,.24);
+
+.min-slide{
+  flex:0 0 100%;
+  min-width:100%;
+  max-width:100%;
+  height:100%;
+  padding:28px;
+  display:flex;
+  flex-direction:column;
 }
-.preview-copy{position:relative;z-index:2}
-.preview-label{
+
+.min-label{
+  align-self:flex-start;
   display:inline-flex;
   align-items:center;
   gap:8px;
-  padding:9px 12px;
+  padding:9px 13px;
   border-radius:999px;
-  background:rgba(255,255,255,.82);
-  border:1px solid rgba(226,232,240,.82);
+  background:rgba(255,255,255,.86);
+  border:1px solid rgba(226,232,240,.86);
   color:#5b4dff;
   font-size:11px;
   font-weight:950;
   letter-spacing:.08em;
   text-transform:uppercase;
   box-shadow:0 10px 24px rgba(90,90,150,.07);
+  white-space:nowrap;
 }
-.preview-label:before{
+
+.min-label:before{
   content:"";
   width:7px;
   height:7px;
   border-radius:999px;
   background:#5b4dff;
 }
-.preview-copy h3{
-  margin:18px 0 10px;
-  font-size:30px;
+
+.min-slide h3{
+  margin:22px 0 10px;
+  color:#0f172a;
+  font-size:31px;
   line-height:1.08;
-  letter-spacing:-.04em;
+  letter-spacing:-.045em;
 }
-.preview-copy p{
+
+.min-slide p{
   margin:0;
+  max-width:310px;
   color:#64748b;
-  font-weight:750;
-  line-height:1.55;
   font-size:14px;
+  line-height:1.58;
+  font-weight:760;
 }
-.preview-chips{
-  margin-top:20px;
+
+.min-body{
+  margin-top:24px;
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:9px;
+  grid-template-columns:1fr 112px;
+  gap:14px;
+  align-items:stretch;
 }
-.preview-chip{
-  border-radius:18px;
-  background:rgba(255,255,255,.80);
-  border:1px solid rgba(226,232,240,.82);
-  padding:12px 10px;
-  box-shadow:0 12px 28px rgba(90,90,150,.07);
-}
-.preview-chip b{display:block;color:#5b4dff;font-size:14px;line-height:1.12}
-.preview-chip span{display:block;color:#64748b;font-size:11px;font-weight:900;margin-top:5px}
-.preview-note{
-  margin-top:16px;
+
+.min-stat{
+  border-radius:24px;
+  padding:17px 18px;
+  background:rgba(255,255,255,.82);
+  border:1px solid rgba(255,255,255,.95);
+  box-shadow:0 16px 34px rgba(90,90,150,.08);
   display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  border-radius:22px;
-  background:#10142f;
-  color:white;
-  padding:16px 18px;
-  box-shadow:0 18px 40px rgba(16,20,47,.14);
+  flex-direction:column;
+  justify-content:center;
+  min-width:0;
 }
-.preview-note span{display:block;color:#cbd5e1;font-weight:800;font-size:12px}
-.preview-note b{display:block;font-size:17px;margin-top:2px}
-.preview-wa{flex:0 0 auto;border-radius:999px;padding:11px 14px;background:#25d366;color:white;font-weight:950;font-size:13px}
+
+.min-stat b{
+  color:#5b4dff;
+  font-size:25px;
+  line-height:1.12;
+  overflow-wrap:anywhere;
+}
+
+.min-stat span{
+  color:#64748b;
+  font-weight:900;
+  font-size:12px;
+  margin-top:7px;
+}
+
+.min-visual{
+  border-radius:24px;
+  background:rgba(255,255,255,.68);
+  border:1px solid rgba(255,255,255,.95);
+  box-shadow:0 14px 30px rgba(90,90,150,.07);
+  display:grid;
+  place-items:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.min-visual:before{
+  content:"";
+  position:absolute;
+  width:76px;
+  height:76px;
+  border-radius:26px;
+  background:
+    radial-gradient(circle at 78% 25%,#ddd6fe 0 9px,transparent 10px),
+    radial-gradient(circle at 72% 76%,#bfdbfe 0 10px,transparent 11px),
+    linear-gradient(135deg,#f8fbff,#eef2ff);
+}
+
+.min-live{
+  position:relative;
+  z-index:2;
+  border-radius:17px;
+  padding:12px 16px;
+  background:linear-gradient(135deg,#6d28d9,#2563eb);
+  color:white;
+  font-weight:950;
+  font-size:14px;
+  box-shadow:0 14px 28px rgba(91,77,255,.22);
+}
+
+.min-cta{
+  margin-top:auto;
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  min-height:46px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#25d366,#16a34a);
+  color:white;
+  font-size:15px;
+  font-weight:950;
+  text-decoration:none;
+  box-shadow:0 14px 28px rgba(37,211,102,.20);
+}
+
+.min-tabs{
+  width:min(390px,100%);
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:8px;
+}
+
+.min-tab{
+  min-width:0;
+  appearance:none;
+  border:1px solid #e2e8f0;
+  background:#f8fafc;
+  color:#64748b;
+  font-weight:950;
+  border-radius:999px;
+  padding:10px 6px;
+  cursor:pointer;
+  white-space:nowrap;
+  font-size:12px;
+}
+
+.min-tab.active{
+  color:#111827;
+  background:#ffffff;
+  box-shadow:0 10px 24px rgba(90,90,150,.08);
+}
+
+.min-arrows{
+  width:min(390px,100%);
+  display:flex;
+  justify-content:center;
+  gap:10px;
+}
+
+.min-arrow{
+  width:35px;
+  height:35px;
+  border:1px solid #e2e8f0;
+  background:#ffffff;
+  border-radius:999px;
+  color:#111827;
+  font-weight:950;
+  cursor:pointer;
+  box-shadow:0 10px 24px rgba(90,90,150,.08);
+}
+
+@media(min-width:981px) and (max-width:1180px){
+  .panel{
+    max-width:480px;
+  }
+  .min-card,
+  .min-tabs,
+  .min-arrows{
+    width:min(365px,100%);
+  }
+}
 
 @media(max-width:980px){
-  .visual-preview{margin-top:18px;padding:16px;border-radius:28px}
-  .preview-stage{grid-template-columns:1fr;min-height:auto;padding:18px;border-radius:24px;gap:16px}
-  .preview-live{min-height:150px;order:2}
-  .preview-copy{order:1}
-  .preview-copy h3{font-size:27px}
-  .preview-chips{grid-template-columns:1fr}
-  .preview-note{padding:14px}
-  .preview-wa{display:none}
+  .panel{
+    padding:10px;
+    border-radius:28px;
+  }
+
+  .inner{
+    padding:14px;
+    border-radius:24px;
+  }
+
+  .min-carousel{
+    gap:10px;
+  }
+
+  .min-card{
+    width:100%;
+    max-width:340px;
+    aspect-ratio:1 / 1;
+    border-radius:26px;
+  }
+
+  .min-slide{
+    padding:20px;
+  }
+
+  .min-slide h3{
+    font-size:26px;
+    margin:17px 0 8px;
+  }
+
+  .min-slide p{
+    font-size:13px;
+    line-height:1.46;
+  }
+
+  .min-body{
+    margin-top:16px;
+    grid-template-columns:1fr 92px;
+    gap:10px;
+  }
+
+  .min-stat{
+    padding:13px 14px;
+    border-radius:20px;
+  }
+
+  .min-stat b{
+    font-size:20px;
+  }
+
+  .min-visual{
+    border-radius:20px;
+  }
+
+  .min-cta{
+    min-height:42px;
+    font-size:14px;
+  }
+
+  .min-tabs{
+    width:100%;
+    max-width:340px;
+    gap:6px;
+  }
+
+  .min-tab{
+    padding:9px 4px;
+    font-size:11px;
+  }
+
+  .min-arrows{
+    display:none;
+  }
 }
+
 @media(max-width:430px){
-  .visual-preview{padding:14px}
-  .preview-stage{padding:16px}
-  .preview-copy h3{font-size:25px}
-  .preview-live{min-height:132px}
+  .min-card,
+  .min-tabs{
+    max-width:318px;
+  }
+
+  .min-slide{
+    padding:18px;
+  }
+
+  .min-slide h3{
+    font-size:24px;
+  }
+
+  .min-body{
+    grid-template-columns:1fr 84px;
+  }
+
+  .min-stat b{
+    font-size:19px;
+  }
+
+  .min-tab{
+    font-size:10.5px;
+  }
 }
 
 </style>
 </head>
 <body>
-<!-- v6.0-hero-unified-visual-option-a -->
+<!-- v6.1-minimal-carousel -->
 <div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 <div class="wrap">
 <header class="nav">
@@ -899,29 +1101,60 @@ img, svg, video, canvas{
     <div class="ticks"><span>Hourly</span><span>Monthly</span><span>Comment Atmosphere</span><span>Custom Package</span></div>
   </div>
   <div class="panel"><div class="inner">
-    <div class="systemtop"><div><div class="kicker">Live Room Support System</div><h2>Fans Live Support</h2><p>Viewer presence · comment rhythm · package quote</p></div><div class="status">WhatsApp Ready</div></div>
-    <div class="visual-preview">
-      <div class="preview-stage">
-        <div class="preview-live" aria-hidden="true">
-          <div class="live-badge">LIVE</div>
-        </div>
-        <div class="preview-copy">
-          <div class="preview-label">LIVE SUPPORT PREVIEW</div>
-          <h3>Live Room Visual</h3>
-          <p>A cleaner preview for viewer presence, comment rhythm, and long-term support.</p>
-          <div class="preview-chips">
-          <div class="preview-chip"><b>Viewers</b><span>50 / 100</span></div>
-          <div class="preview-chip"><b>Comments</b><span>Available</span></div>
-          <div class="preview-chip"><b>Monthly</b><span>Flexible</span></div>
+    <div class="min-carousel" data-min-carousel>
+      <div class="min-card">
+        <div class="min-track">
+        <article class="min-slide">
+          <div class="min-label">VIEWER HOURLY</div>
+          <h3>Hourly Viewer Support</h3>
+          <p>Suitable for short live sessions, events, and quick live room presence support.</p>
+          <div class="min-body">
+            <div class="min-stat"><b>50 viewers / 1 hour</b><span>From RM3</span></div>
+            <div class="min-visual" aria-hidden="true"><div class="min-live">LIVE</div></div>
           </div>
+          <a class="min-cta" href="https://wa.me/60137114191?text=Hi%20Fans%2C%20I%20would%20like%20to%20ask%20about%20Facebook%20Live%20viewer%20support.%0A%0ALive%20date%3A%0ALive%20time%3A%0AViewer%20quantity%3A%0ADuration%3A%0AMonthly%20package%20needed%3A%0AComment%20atmosphere%20support%20needed%3A" target="_blank" rel="noopener">Ask Viewer Support →</a>
+        </article>
+        <article class="min-slide">
+          <div class="min-label">MONTHLY PLAN</div>
+          <h3>Monthly Viewer Plan</h3>
+          <p>Suitable for regular live sellers and long-term operations that need stable support.</p>
+          <div class="min-body">
+            <div class="min-stat"><b>Monthly</b><span>Flexible</span></div>
+            <div class="min-visual" aria-hidden="true"><div class="min-live">LIVE</div></div>
+          </div>
+          <a class="min-cta" href="https://wa.me/60137114191?text=Hi%20Fans%2C%20I%20would%20like%20to%20ask%20about%20Facebook%20Live%20viewer%20support.%0A%0ALive%20date%3A%0ALive%20time%3A%0AViewer%20quantity%3A%0ADuration%3A%0AMonthly%20package%20needed%3A%0AComment%20atmosphere%20support%20needed%3A" target="_blank" rel="noopener">Ask Monthly Plan →</a>
+        </article>
+        <article class="min-slide">
+          <div class="min-label">COMMENT ATMOSPHERE</div>
+          <h3>Comment Atmosphere</h3>
+          <p>Support the interaction rhythm and make the live room feel more active.</p>
+          <div class="min-body">
+            <div class="min-stat"><b>Available</b><span>Interaction support</span></div>
+            <div class="min-visual" aria-hidden="true"><div class="min-live">LIVE</div></div>
+          </div>
+          <a class="min-cta" href="https://wa.me/60137114191?text=Hi%20Fans%2C%20I%20would%20like%20to%20ask%20about%20Facebook%20Live%20viewer%20support.%0A%0ALive%20date%3A%0ALive%20time%3A%0AViewer%20quantity%3A%0ADuration%3A%0AMonthly%20package%20needed%3A%0AComment%20atmosphere%20support%20needed%3A" target="_blank" rel="noopener">Ask Comment Support →</a>
+        </article>
+        <article class="min-slide">
+          <div class="min-label">CUSTOM PACKAGE</div>
+          <h3>Custom Package</h3>
+          <p>Combine viewer and comment support into a suitable package through WhatsApp.</p>
+          <div class="min-body">
+            <div class="min-stat"><b>Viewer + Comment</b><span>WhatsApp quote</span></div>
+            <div class="min-visual" aria-hidden="true"><div class="min-live">LIVE</div></div>
+          </div>
+          <a class="min-cta" href="https://wa.me/60137114191?text=Hi%20Fans%2C%20I%20would%20like%20to%20ask%20about%20Facebook%20Live%20viewer%20support.%0A%0ALive%20date%3A%0ALive%20time%3A%0AViewer%20quantity%3A%0ADuration%3A%0AMonthly%20package%20needed%3A%0AComment%20atmosphere%20support%20needed%3A" target="_blank" rel="noopener">Get Custom Quote →</a>
+        </article>
         </div>
       </div>
-      <div class="preview-note">
-        <div>
-          <span>WhatsApp Ready</span>
-          <b>Confirm a suitable package quickly</b>
-        </div>
-        <div class="preview-wa">Ask on WhatsApp</div>
+      <div class="min-tabs">
+        <button class="min-tab" type="button">Viewer</button>
+        <button class="min-tab" type="button">Monthly</button>
+        <button class="min-tab" type="button">Comments</button>
+        <button class="min-tab" type="button">Custom</button>
+      </div>
+      <div class="min-arrows">
+        <button class="min-arrow" type="button" data-min-prev>‹</button>
+        <button class="min-arrow" type="button" data-min-next>›</button>
       </div>
     </div>
   </div></div>
@@ -951,6 +1184,58 @@ img, svg, video, canvas{
 <section class="finalcta"><div><h3>Ready to add more live presence to your next Facebook Live?</h3><p>Send your live details and Fans will help confirm a suitable package through WhatsApp.</p></div><a class="btn wa" href="https://wa.me/60137114191?text=Hi%20Fans%2C%20I%20would%20like%20to%20ask%20about%20Facebook%20Live%20viewer%20support.%0A%0ALive%20date%3A%0ALive%20time%3A%0AViewer%20quantity%3A%0ADuration%3A%0AMonthly%20package%20needed%3A%0AComment%20atmosphere%20support%20needed%3A" target="_blank" rel="noopener">Ask on WhatsApp</a></section>
 <div class="footer">Fans｜Facebook Live Support</div>
 </div>
+
+
+<script>
+(() => {
+  document.querySelectorAll('.min-carousel[data-min-carousel]').forEach((carousel) => {
+    const track = carousel.querySelector('.min-track');
+    const slides = Array.from(carousel.querySelectorAll('.min-slide'));
+    const tabs = Array.from(carousel.querySelectorAll('.min-tab'));
+    const prev = carousel.querySelector('[data-min-prev]');
+    const next = carousel.querySelector('[data-min-next]');
+    const interval = 12000;
+    const pauseAfterManual = 20000;
+    let index = 0;
+    let pausedUntil = 0;
+    let hover = false;
+    let startX = 0;
+
+    const update = () => {
+      track.style.transform = `translateX(-${index * 100}%)`;
+      tabs.forEach((tab, i) => tab.classList.toggle('active', i === index));
+    };
+
+    const go = (nextIndex, manual = false) => {
+      index = (nextIndex + slides.length) % slides.length;
+      update();
+      if (manual) pausedUntil = Date.now() + pauseAfterManual;
+    };
+
+    tabs.forEach((tab, i) => tab.addEventListener('click', () => go(i, true)));
+    if (prev) prev.addEventListener('click', () => go(index - 1, true));
+    if (next) next.addEventListener('click', () => go(index + 1, true));
+
+    carousel.addEventListener('mouseenter', () => hover = true);
+    carousel.addEventListener('mouseleave', () => hover = false);
+
+    carousel.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    }, {passive:true});
+
+    carousel.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 42) go(index + (dx < 0 ? 1 : -1), true);
+    }, {passive:true});
+
+    setInterval(() => {
+      if (!hover && Date.now() > pausedUntil) go(index + 1, false);
+    }, interval);
+
+    update();
+  });
+})();
+</script>
 
 </body>
 </html>
