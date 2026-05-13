@@ -3690,6 +3690,94 @@ img, svg, video, canvas{
   .finalcta.v615-finalcta h3{font-size:24px}
 }
 
+/* V6.17 Dashboard after removing WhatsApp CTA - compact closing */
+
+.hero-visual a[href*="wa.me"],
+.hero-visual a[href*="whatsapp"],
+.hero-dashboard a[href*="wa.me"],
+.hero-dashboard a[href*="whatsapp"],
+.dashboard-shell a[href*="wa.me"],
+.dashboard-shell a[href*="whatsapp"],
+.preview-dashboard a[href*="wa.me"],
+.preview-dashboard a[href*="whatsapp"] {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Desktop dashboard compact */
+@media (min-width: 769px) {
+  .hero-visual .service-card,
+  .hero-visual .dashboard-card,
+  .hero-visual .dashboard-slide,
+  .hero-visual .preview-card,
+  .hero-dashboard .service-card,
+  .hero-dashboard .dashboard-card,
+  .hero-dashboard .dashboard-slide,
+  .hero-dashboard .preview-card,
+  .dashboard-shell .service-card,
+  .dashboard-shell .dashboard-card,
+  .dashboard-shell .dashboard-slide,
+  .dashboard-shell .preview-card {
+    min-height: 300px !important;
+    padding-bottom: 34px !important;
+  }
+
+  .hero-visual .service-tabs,
+  .hero-visual .dashboard-tabs,
+  .hero-visual .preview-tabs,
+  .hero-dashboard .service-tabs,
+  .hero-dashboard .dashboard-tabs,
+  .hero-dashboard .preview-tabs,
+  .dashboard-shell .service-tabs,
+  .dashboard-shell .dashboard-tabs,
+  .dashboard-shell .preview-tabs {
+    margin-top: 18px !important;
+  }
+
+  .hero-visual .carousel-arrows,
+  .hero-visual .dashboard-arrows,
+  .hero-dashboard .carousel-arrows,
+  .hero-dashboard .dashboard-arrows,
+  .dashboard-shell .carousel-arrows,
+  .dashboard-shell .dashboard-arrows {
+    margin-top: 12px !important;
+  }
+}
+
+/* Mobile: only light closing */
+@media (max-width: 768px) {
+  .hero-visual .service-card,
+  .hero-visual .dashboard-card,
+  .hero-visual .dashboard-slide,
+  .hero-visual .preview-card,
+  .hero-dashboard .service-card,
+  .hero-dashboard .dashboard-card,
+  .hero-dashboard .dashboard-slide,
+  .hero-dashboard .preview-card,
+  .dashboard-shell .service-card,
+  .dashboard-shell .dashboard-card,
+  .dashboard-shell .dashboard-slide,
+  .dashboard-shell .preview-card {
+    padding-bottom: 26px !important;
+  }
+
+  .hero-visual .service-tabs,
+  .hero-visual .dashboard-tabs,
+  .hero-visual .preview-tabs,
+  .hero-dashboard .service-tabs,
+  .hero-dashboard .dashboard-tabs,
+  .hero-dashboard .preview-tabs,
+  .dashboard-shell .service-tabs,
+  .dashboard-shell .dashboard-tabs,
+  .dashboard-shell .preview-tabs {
+    margin-top: 14px !important;
+  }
+}
+  
 </style>
 </head>
 <body>
