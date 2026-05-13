@@ -1072,10 +1072,160 @@ img, svg, video, canvas{
   }
 }
 
+
+/* V6.3 trilingual hero layout unification */
+@media(min-width:981px){
+  .hero{
+    grid-template-columns:1.04fr .96fr;
+    gap:40px;
+    align-items:center;
+  }
+
+  h1{
+    font-size:56px;
+    line-height:1.04;
+    letter-spacing:-.052em;
+    max-width:680px;
+  }
+
+  .lead.desktop-lead{
+    min-height:92px;
+    max-width:620px;
+  }
+
+  .actions{
+    margin-top:22px;
+  }
+
+  .ticks{
+    margin-top:22px;
+  }
+
+  .panel{
+    max-width:500px;
+  }
+
+  .inner{
+    padding:16px;
+  }
+
+  .min-card{
+    width:min(400px,100%);
+  }
+
+  .min-tabs,
+  .min-arrows{
+    width:min(400px,100%);
+  }
+
+  .min-slide{
+    padding:22px;
+  }
+
+  .min-label{
+    font-size:10.8px;
+    padding:8px 12px;
+  }
+
+  .min-slide h3{
+    font-size:29px;
+    line-height:1.06;
+    min-height:62px;
+    margin:16px 0 6px;
+    letter-spacing:-.04em;
+  }
+
+  .min-slide p{
+    font-size:13.4px;
+    line-height:1.48;
+    min-height:42px;
+    max-width:320px;
+  }
+
+  .min-body{
+    margin-top:12px;
+    grid-template-columns:minmax(0,1fr) 104px;
+    gap:12px;
+  }
+
+  .min-stat{
+    padding:13px 15px;
+    border-radius:22px;
+  }
+
+  .min-stat b{
+    font-size:23px;
+    line-height:1.12;
+  }
+
+  .min-stat span{
+    font-size:11.5px;
+    margin-top:6px;
+  }
+
+  .min-visual{
+    border-radius:22px;
+  }
+
+  .min-live{
+    font-size:13.5px;
+    padding:11px 15px;
+  }
+
+  .min-cta{
+    min-height:42px;
+    font-size:14.5px;
+    margin-top:auto;
+  }
+
+  .min-tab{
+    font-size:11.5px;
+    padding:9px 5px;
+  }
+}
+
+@media(min-width:981px) and (max-width:1180px){
+  h1{
+    font-size:52px;
+  }
+
+  .lead.desktop-lead{
+    min-height:96px;
+  }
+
+  .min-card,
+  .min-tabs,
+  .min-arrows{
+    width:min(380px,100%);
+  }
+
+  .min-slide h3{
+    font-size:27px;
+  }
+
+  .min-stat b{
+    font-size:21px;
+  }
+}
+
+@media(max-width:980px){
+  .lead.desktop-lead{
+    min-height:0;
+  }
+
+  .min-slide h3{
+    min-height:auto;
+  }
+
+  .min-slide p{
+    min-height:auto;
+  }
+}
+
 </style>
 </head>
 <body>
-<!-- v6.2-natural-copy-unified -->
+<!-- v6.3-trilingual-layout-unified -->
 <div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 <div class="wrap">
 <header class="nav">
@@ -1094,7 +1244,7 @@ img, svg, video, canvas{
 <section class="hero">
   <div>
     <div class="pill">✦ Premium Facebook Live Support</div>
-    <h1>Add Live Presence <span class="grad">to Your Facebook Live</span></h1>
+    <h1>Add Live Presence <span class="grad">to Facebook Live</span></h1>
     <p class="lead desktop-lead">Fans provides Facebook Live viewer support, comment atmosphere support, and custom packages for live sellers, events, and long-term operations.</p>
     <p class="lead mobile-lead">Fans provides Facebook Live viewer support, comment atmosphere support, and custom packages for live sellers, events, and long-term operations.</p>
     <div class="actions"><a class="btn primary" href="https://wa.me/60137114191?text=Hi%20Fans%2C%20I%20would%20like%20to%20ask%20about%20Facebook%20Live%20viewer%20support.%0A%0ALive%20date%3A%0ALive%20time%3A%0AViewer%20quantity%3A%0ADuration%3A%0AMonthly%20package%20needed%3A%0AComment%20atmosphere%20support%20needed%3A" target="_blank" rel="noopener">Ask for Custom Package →</a><a class="btn ghost" href="#price">View Reference Price</a></div>
@@ -1109,7 +1259,7 @@ img, svg, video, canvas{
           <h3>Add Live Viewers by Hour</h3>
           <p>For short live sessions, product launches, or quick live room presence.</p>
           <div class="min-body">
-            <div class="min-stat"><b>50 viewers / 1 hour</b><span>From RM3</span></div>
+            <div class="min-stat"><b>50 / 1 hour</b><span>From RM3</span></div>
             <div class="min-visual" aria-hidden="true"><div class="min-live">LIVE</div></div>
           </div>
           <a class="min-cta" href="https://wa.me/60137114191?text=Hi%20Fans%2C%20I%20would%20like%20to%20ask%20about%20Facebook%20Live%20viewer%20support.%0A%0ALive%20date%3A%0ALive%20time%3A%0AViewer%20quantity%3A%0ADuration%3A%0AMonthly%20package%20needed%3A%0AComment%20atmosphere%20support%20needed%3A" target="_blank" rel="noopener">Ask on WhatsApp →</a>
@@ -1122,7 +1272,7 @@ img, svg, video, canvas{
             <div class="min-stat"><b>Monthly support</b><span>Flexible schedule</span></div>
             <div class="min-visual" aria-hidden="true"><div class="min-live">LIVE</div></div>
           </div>
-          <a class="min-cta" href="https://wa.me/60137114191?text=Hi%20Fans%2C%20I%20would%20like%20to%20ask%20about%20Facebook%20Live%20viewer%20support.%0A%0ALive%20date%3A%0ALive%20time%3A%0AViewer%20quantity%3A%0ADuration%3A%0AMonthly%20package%20needed%3A%0AComment%20atmosphere%20support%20needed%3A" target="_blank" rel="noopener">Ask Monthly Package →</a>
+          <a class="min-cta" href="https://wa.me/60137114191?text=Hi%20Fans%2C%20I%20would%20like%20to%20ask%20about%20Facebook%20Live%20viewer%20support.%0A%0ALive%20date%3A%0ALive%20time%3A%0AViewer%20quantity%3A%0ADuration%3A%0AMonthly%20package%20needed%3A%0AComment%20atmosphere%20support%20needed%3A" target="_blank" rel="noopener">Ask on WhatsApp →</a>
         </article>
         <article class="min-slide">
           <div class="min-label">COMMENT SUPPORT</div>
@@ -1132,7 +1282,7 @@ img, svg, video, canvas{
             <div class="min-stat"><b>Comment support</b><span>Works with viewers</span></div>
             <div class="min-visual" aria-hidden="true"><div class="min-live">LIVE</div></div>
           </div>
-          <a class="min-cta" href="https://wa.me/60137114191?text=Hi%20Fans%2C%20I%20would%20like%20to%20ask%20about%20Facebook%20Live%20viewer%20support.%0A%0ALive%20date%3A%0ALive%20time%3A%0AViewer%20quantity%3A%0ADuration%3A%0AMonthly%20package%20needed%3A%0AComment%20atmosphere%20support%20needed%3A" target="_blank" rel="noopener">Ask Comment Support →</a>
+          <a class="min-cta" href="https://wa.me/60137114191?text=Hi%20Fans%2C%20I%20would%20like%20to%20ask%20about%20Facebook%20Live%20viewer%20support.%0A%0ALive%20date%3A%0ALive%20time%3A%0AViewer%20quantity%3A%0ADuration%3A%0AMonthly%20package%20needed%3A%0AComment%20atmosphere%20support%20needed%3A" target="_blank" rel="noopener">Ask on WhatsApp →</a>
         </article>
         <article class="min-slide">
           <div class="min-label">CUSTOM PACKAGE</div>
@@ -1142,7 +1292,7 @@ img, svg, video, canvas{
             <div class="min-stat"><b>Viewers + Comments</b><span>WhatsApp quote</span></div>
             <div class="min-visual" aria-hidden="true"><div class="min-live">LIVE</div></div>
           </div>
-          <a class="min-cta" href="https://wa.me/60137114191?text=Hi%20Fans%2C%20I%20would%20like%20to%20ask%20about%20Facebook%20Live%20viewer%20support.%0A%0ALive%20date%3A%0ALive%20time%3A%0AViewer%20quantity%3A%0ADuration%3A%0AMonthly%20package%20needed%3A%0AComment%20atmosphere%20support%20needed%3A" target="_blank" rel="noopener">Ask Custom Package →</a>
+          <a class="min-cta" href="https://wa.me/60137114191?text=Hi%20Fans%2C%20I%20would%20like%20to%20ask%20about%20Facebook%20Live%20viewer%20support.%0A%0ALive%20date%3A%0ALive%20time%3A%0AViewer%20quantity%3A%0ADuration%3A%0AMonthly%20package%20needed%3A%0AComment%20atmosphere%20support%20needed%3A" target="_blank" rel="noopener">Ask on WhatsApp →</a>
         </article>
         </div>
       </div>
