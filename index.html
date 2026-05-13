@@ -2335,10 +2335,35 @@ img, svg, video, canvas{
   }
 }
 
+
+/* V6.10.1 mobile height fix */
+/* Fix: prevent desktop min-height from stretching Support Layers cards on mobile. */
+@media(max-width:980px){
+  #services .layerStep{
+    min-height:auto !important;
+    height:auto !important;
+  }
+
+  #services .layerFlow{
+    align-items:stretch;
+  }
+
+  #services .layerStep p{
+    margin-bottom:0;
+  }
+}
+
+@media(max-width:430px){
+  #services .layerStep{
+    min-height:auto !important;
+    height:auto !important;
+  }
+}
+
 </style>
 </head>
 <body>
-<!-- v6.10-support-layers-final-tight -->
+<!-- v6.10.1-support-layers-mobile-height-fix -->
 <div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 <div class="wrap">
 <header class="nav">
