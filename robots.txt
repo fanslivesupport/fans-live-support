@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fanslivesupport.github.io/fans-live-support/sitemap.xml
