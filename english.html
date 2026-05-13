@@ -630,25 +630,27 @@ img, svg, video, canvas{
 }
 
 
-/* V5.9 hero left-right balance adjustment only */
+/* V5.10 title-stable hero balance - no new structure */
 @media(min-width:981px){
   .hero{
-    grid-template-columns:1.07fr .93fr;
-    gap:36px;
+    grid-template-columns:1.02fr .98fr;
+    gap:38px;
     align-items:start;
   }
 
+  /* Keep desktop headline stable; avoid V5.9 oversized wrapping */
   h1{
-    font-size:clamp(56px,6.25vw,86px);
-    line-height:.98;
+    font-size:56px;
+    line-height:1.04;
+    letter-spacing:-.052em;
   }
 
   .lead{
-    max-width:660px;
+    max-width:610px;
   }
 
   .panel{
-    max-width:530px;
+    max-width:520px;
     padding:11px;
     border-radius:34px;
   }
@@ -667,12 +669,12 @@ img, svg, video, canvas{
   }
 
   .square-card-shell{
-    width:min(374px,100%);
+    width:min(366px,100%);
   }
 
   .square-tabs,
   .square-arrows{
-    width:min(374px,100%);
+    width:min(366px,100%);
   }
 
   .square-slide{
@@ -684,19 +686,28 @@ img, svg, video, canvas{
   }
 
   .square-mid{
-    grid-template-columns:1fr 102px;
+    grid-template-columns:1fr 100px;
   }
 }
 
 @media(min-width:981px) and (max-width:1180px){
+  .hero{
+    grid-template-columns:1fr .96fr;
+    gap:34px;
+  }
+
+  h1{
+    font-size:52px;
+  }
+
   .panel{
-    max-width:505px;
+    max-width:500px;
   }
 
   .square-card-shell,
   .square-tabs,
   .square-arrows{
-    width:min(354px,100%);
+    width:min(348px,100%);
   }
 }
 
@@ -710,7 +721,7 @@ img, svg, video, canvas{
 </style>
 </head>
 <body>
-<!-- v5.9-hero-balance -->
+<!-- v5.10-title-stable-balance -->
 <div class="bg"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
 <div class="wrap">
 <header class="nav">
